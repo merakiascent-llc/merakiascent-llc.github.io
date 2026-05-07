@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meraki Ascent LLC · Soul-Led Strategy</title>
+  <meta name="description" content="Meraki Ascent helps founder-led, values-driven companies grow through soul-led business development, investor relations, and marketing.">
+  <link rel="icon" type="image/png" href="assets/logo-icon-color.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ================ HERO ================ */
+    #home {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 5rem 4rem;
+      gap: 4rem;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    #home::after {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0; width: 48%;
+      background: var(--off-white);
+      z-index: 0;
+    }
+
+    .hero-left { position: relative; z-index: 1; }
+    .hero-right {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+    .eyebrow-line { width: 32px; height: 1px; background: var(--pink); }
+    .eyebrow-text {
+      font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--pink); font-weight: 500;
+    }
+
+    .hero-title {
+      font-family: 'Fraunces', 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 4.5vw, 4rem);
+      font-weight: 400; line-height: 1.1;
+      color: var(--dark); margin-bottom: 1.8rem;
+    }
+    /* Fix 6: dim italic to deeper magenta */
+    .hero-title em { font-style: italic; color: var(--pink-deep); }
+
+    .hero-sub {
+      font-size: 1rem; line-height: 1.8; color: var(--mid);
+      font-weight: 400; margin-bottom: 2.8rem; max-width: 480px;
+    }
+
+    .hero-actions { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3.5rem; }
+
+    .hero-stats {
+      display: flex; gap: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-family: 'Fraunces', 'Playfair Display', serif;
+      font-size: 1.7rem; font-weight: 500; color: var(--dark);
+      line-height: 1.1;
+    }
+    .stat-num span { color: var(--pink); }
+    .stat-label {
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--light-mid); margin-top: 0.5rem; font-weight: 500;
+    }
+
+    /* ===== Fix 1: Bigger logo + atmospheric SVG rings/halos ===== */
+    .hero-right-stack {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 2rem;
+      width: 100%;
+    }
+    .hero-logo-wrap {
+      position: relative;
+      width: 100%; max-width: 500px;
+      aspect-ratio: 1 / 1;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-rings {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      animation: ringDrift 14s ease-in-out infinite alternate;
+    }
+    @keyframes ringDrift {
+      from { transform: rotate(-2deg); }
+      to   { transform: rotate(2deg); }
+    }
+    .hero-logo-wrap::before {
+      content: '';
+      position: absolute;
+      width: 90%; height: 90%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(220,26,120,0.10) 0%, rgba(60,160,180,0.06) 50%, transparent 75%);
+    }
+    .hero-logo {
+      width: 88%; max-width: 420px;
+      height: auto;
+      object-fit: contain;
+      position: relative; z-index: 1;
+      animation: floatIn 1s ease both;
+    }
+    @keyframes floatIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .mantra-row {
+      display: flex; align-items: center; gap: 0.8rem;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .mantra-row span {
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--dark); font-weight: 600;
+    }
+    .mantra-row .dot { color: var(--pink); font-size: 0.85rem; }
+
+    .pronunciation {
+      display: flex; align-items: center; gap: 0.7rem;
+      justify-content: center;
+    }
+    .pron-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light-mid);
+      font-weight: 500;
+    }
+    .pron-script {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: var(--pink);
+      font-weight: 600;
+      transform: rotate(-1deg);
+      display: inline-block;
+    }
+
+    /* ================ THREE PRACTICE AREAS ================ */
+    /* Fix 3: Tighten spacing above cards (was 8rem padding + 4rem heading gap) */
+    #practice {
+      padding: 5rem 5rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .practice-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 2.4rem;
+    }
+    .practice-head .section-label { justify-content: center; }
+    .practice-sub {
+      font-size: 1rem; line-height: 1.8; color: var(--mid);
+      font-weight: 400; margin-top: 1rem;
+    }
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .practice-card {
+      padding: 2.5rem 2rem;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .practice-card:hover {
+      border-color: var(--pink);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px -20px rgba(220, 26, 120, 0.18);
+    }
+    .practice-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--pink);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    /* Fix 4: Custom Meraki-branded icons */
+    .practice-icon {
+      width: 44px; height: 44px;
+      margin-bottom: 1.2rem;
+      color: var(--dark);
+    }
+    .practice-icon .accent { fill: var(--pink); }
+    .practice-icon .stroke { stroke: var(--dark); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .practice-icon .pin    { fill: var(--dark); }
+    .practice-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+      line-height: 1.25;
+    }
+    .practice-card h3 em { font-style: italic; color: var(--pink-deep); }
+    .practice-card p {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--mid);
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+    }
+    .practice-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--pink);
+      font-weight: 600;
+      align-self: flex-start;
+      border-bottom: 1px solid var(--pink);
+      padding-bottom: 3px;
+      transition: gap 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .practice-link:hover { gap: 0.75rem; }
+
+    /* ================ ABOUT ================ */
+    /* Fix 3: Tighten gap above Hannah section (was 8rem) */
+    #hannah {
+      padding: 4rem 5rem 7rem;
+      background: var(--white);
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .hannah-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .hannah-photo-wrap {
+      position: relative;
+    }
+    .hannah-photo {
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      max-width: 380px;
+      box-shadow: 0 30px 60px -30px rgba(60, 20, 40, 0.4);
+    }
+    .hannah-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+    .hannah-photo-caption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 1.4rem 1.6rem;
+      color: var(--white);
+      background: linear-gradient(to top, rgba(60,20,40,0.78), transparent);
+    }
+    .hannah-photo-caption .name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .hannah-photo-caption .role {
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); font-weight: 500;
+    }
+    .hannah-pink-block {
+      position: absolute;
+      top: -1.5rem; left: -1.5rem;
+      width: 100px; height: 100px;
+      background: rgba(220, 26, 120, 0.12);
+      border-radius: 2px;
+      z-index: -1;
+    }
+
+    .about-body {
+      font-size: 0.97rem; line-height: 1.9; color: var(--mid);
+      font-weight: 400; margin-bottom: 1.4rem;
+    }
+    .about-body strong { color: var(--dark); font-weight: 500; }
+
+    .credentials-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .credential {
+      padding: 1.2rem 1.4rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: var(--off-white);
+    }
+    .credential-label {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--pink); font-weight: 500; margin-bottom: 0.4rem;
+    }
+    .credential-value {
+      font-size: 0.9rem; color: var(--dark); font-weight: 500;
+    }
+    .credential-detail {
+      font-size: 0.78rem; color: var(--light-mid); font-weight: 400;
+      margin-top: 0.2rem;
+    }
+
+    .about-callout {
+      padding: 1.5rem 1.8rem;
+      border-left: 2px solid var(--pink);
+      background: var(--off-white);
+      border-radius: 0 2px 2px 0;
+    }
+    .about-callout-label {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--pink); margin-bottom: 0.7rem; font-weight: 500;
+    }
+    .about-callout p {
+      font-size: 0.88rem; line-height: 1.8; color: var(--mid); font-weight: 400;
+    }
+
+    /* ================ PHILOSOPHY (DARK BAND) ================ */
+    #philosophy {
+      background: var(--dark);
+      padding: 7rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    #philosophy::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(220,26,120,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(60,160,180,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .philosophy-inner {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .philosophy-quote {
+      position: relative;
+      padding: 1rem 0;
+    }
+    .philosophy-quote::before {
+      content: '"';
+      position: absolute; top: -2rem; left: -1rem;
+      font-family: 'Fraunces', serif;
+      font-size: 9rem; color: rgba(220, 26, 120, 0.25);
+      line-height: 1; font-style: italic;
+    }
+    .quote-text {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.4rem, 2vw, 1.7rem);
+      font-style: italic; font-weight: 400;
+      color: var(--white); line-height: 1.55;
+      position: relative; z-index: 1;
+    }
+    .quote-accent {
+      width: 40px; height: 1px; background: var(--pink);
+      margin: 1.5rem 0 1rem;
+    }
+    .quote-sub {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--pink-light); font-weight: 500;
+    }
+
+    .pillars-list {
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .pillar {
+      display: flex; align-items: flex-start; gap: 1.2rem;
+      padding: 1.2rem 1.3rem;
+      border-left: 2px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+      border-radius: 0 2px 2px 0;
+    }
+    .pillar:hover {
+      border-left-color: var(--pink);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .pillar-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--pink);
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .pillar-text strong {
+      color: var(--white); font-weight: 500;
+      display: block; font-size: 0.85rem; letter-spacing: 0.06em;
+      margin-bottom: 0.3rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .pillar-text p {
+      font-size: 0.86rem; color: rgba(255, 255, 255, 0.7);
+      font-weight: 400; line-height: 1.65;
+    }
+
+    /* ================ CTA ================ */
+    #cta {
+      background: var(--off-white);
+      padding: 7rem 5rem;
+      text-align: center;
+    }
+    .cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cta-heading {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400; line-height: 1.15;
+      color: var(--dark); margin: 1rem 0 1.2rem;
+    }
+    .cta-heading em { font-style: italic; color: var(--pink-deep); }
+    .cta-sub {
+      font-size: 1rem; line-height: 1.8; color: var(--mid);
+      font-weight: 400; margin-bottom: 2.5rem;
+    }
+    .cta-actions {
+      display: inline-flex; gap: 1.5rem;
+      align-items: center; flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cta-signoff {
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: block;
+      width: fit-content;
+    }
+    .cta-signoff .script {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: var(--pink);
+      font-weight: 600;
+    }
+    .cta-signoff .role {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--light-mid); font-weight: 500;
+      margin-top: 0.3rem;
+    }
+
+    /* ================ RESPONSIVE ================ */
+    @media (max-width: 900px) {
+      /* Fix 8: explicit mobile order */
+      #home {
+        grid-template-columns: 1fr;
+        padding: 7rem 1.5rem 4rem;
+        gap: 2.5rem;
+      }
+      #home::after { display: none; }
+      .hero-left {
+        display: contents;
+      }
+      .hero-right {
+        display: contents;
+      }
+      .hero-eyebrow         { order: 1; }
+      .hero-title           { order: 2; }
+      .hero-sub             { order: 3; }
+      .hero-actions         { order: 4; margin-bottom: 1rem; }
+      .hero-stats           { order: 5; flex-wrap: wrap; gap: 1.5rem 2rem; padding-top: 2rem; margin-bottom: 1rem; }
+      .hero-right-stack     { order: 6; gap: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); width: 100%; }
+      .hero-logo-wrap       { max-width: 320px; }
+
+      #practice { padding: 3rem 1.5rem 2rem; }
+      .practice-grid { grid-template-columns: 1fr; }
+      #hannah { padding: 3rem 1.5rem 5rem; }
+      .hannah-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hannah-pink-block { display: none; }
+      #philosophy { padding: 5rem 1.5rem; }
+      .philosophy-inner { grid-template-columns: 1fr; gap: 3rem; }
+      #cta { padding: 5rem 1.5rem; }
+      .credentials-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav id="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="assets/logo-icon-color.png" alt="Meraki Ascent"/>
+    <span class="nav-brand-text">Meraki Ascent</span>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('is-open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html" class="is-active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Business Development · Investor Relations · Marketing</span>
+    </div>
+    <h1 class="hero-title">
+      Connecting people.<br>
+      Driving <em>meaningful</em><br>
+      growth.
+    </h1>
+    <p class="hero-sub">
+      Meraki Ascent helps founder-led, values-driven companies grow through soul-led business development, investor relations, and marketing. Connecting good people doing good things with each other.
+    </p>
+    <div class="hero-actions">
+      <a href="services.html" class="btn-primary">Explore Services</a>
+      <a href="about.html" class="btn-secondary">The Story →</a>
+    </div>
+    <!-- Fix 2: Real stats -->
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">5<span>+</span> Years</div>
+        <div class="stat-label">Combined Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">Methow Valley</div>
+        <div class="stat-label">Okanogan County HQ</div>
+      </div>
+      <div>
+        <div class="stat-num">Soul-led</div>
+        <div class="stat-label">Strategy</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-right-stack">
+      <div class="hero-logo-wrap">
+        <!-- Fix 1: Atmospheric SVG (orbital rings + contour halos) behind the badge -->
+        <svg class="hero-rings" viewBox="0 0 500 500" aria-hidden="true">
+          <defs>
+            <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"  stop-color="#DC1A78" stop-opacity="0.06"/>
+              <stop offset="60%" stop-color="#3CA0B4" stop-opacity="0.04"/>
+              <stop offset="100%" stop-color="#3CA0B4" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="250" cy="250" r="240" fill="url(#halo)"/>
+          <circle cx="250" cy="250" r="232" fill="none" stroke="#DC1A78" stroke-opacity="0.10" stroke-width="0.8"/>
+          <circle cx="250" cy="250" r="200" fill="none" stroke="#3CA0B4" stroke-opacity="0.10" stroke-width="0.8" stroke-dasharray="2 6"/>
+          <circle cx="250" cy="250" r="170" fill="none" stroke="#DC1A78" stroke-opacity="0.08" stroke-width="0.8"/>
+          <!-- Soft contour arcs -->
+          <path d="M60 250 a190 190 0 0 1 380 0" fill="none" stroke="#3C1428" stroke-opacity="0.05" stroke-width="0.8"/>
+          <path d="M80 250 a170 170 0 0 1 340 0" fill="none" stroke="#3C1428" stroke-opacity="0.04" stroke-width="0.8"/>
+          <path d="M100 250 a150 150 0 0 1 300 0" fill="none" stroke="#3C1428" stroke-opacity="0.04" stroke-width="0.8"/>
+          <!-- Subtle orbit dots -->
+          <circle cx="482" cy="250" r="2.5" fill="#DC1A78" opacity="0.4"/>
+          <circle cx="18"  cy="250" r="2"   fill="#3CA0B4" opacity="0.4"/>
+          <circle cx="250" cy="50"  r="1.5" fill="#DC1A78" opacity="0.3"/>
+        </svg>
+        <img src="assets/logo-primary-badge.png" alt="Meraki Ascent badge" class="hero-logo"/>
+      </div>
+      <div class="mantra-row">
+        <span>Passion</span><span class="dot">●</span>
+        <span>Purpose</span><span class="dot">●</span>
+        <span>Progress</span>
+      </div>
+      <div class="pronunciation">
+        <span class="pron-label">pronounced</span>
+        <span class="pron-script">Mare-uh-kye Uh-sent</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRUST BAR ========== -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+    Founder-Led Companies
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>
+    Investor &amp; Partner Networks
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M3 11l3-9 4 6h11l-3 9-4-6H3z"/></svg>
+    Soul-Led Marketing
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+    Values-Driven Brands
+  </div>
+</div>
+
+<!-- ========== THREE PRACTICE AREAS ========== -->
+<section id="practice">
+  <div class="practice-head reveal">
+    <div class="section-label">
+      <div class="label-line"></div>
+      <span class="label-text">The Practice</span>
+    </div>
+    <h2 class="section-heading">Three tables. <em>One seat at all of them.</em></h2>
+    <p class="practice-sub">
+      Most BD professionals don't speak investor. Most investor-relations folks don't speak creative. Sitting at all three tables is rare. Sitting at all three with soul is rarer.
+    </p>
+    <p class="practice-sub" style="margin-top: 0.5rem; font-size: 0.88rem; color: var(--light-mid); font-style: italic;">
+      Marketing runs on packaged tiers. BD and investor relations are scoped per engagement.
+    </p>
+  </div>
+
+  <div class="practice-grid">
+    <!-- Fix 4: BD card icon = trail-marker dots on a path leading up -->
+    <article class="practice-card reveal">
+      <div class="practice-num">01 · BD</div>
+      <svg class="practice-icon" viewBox="0 0 48 48" aria-hidden="true">
+        <path class="stroke" d="M8 40 C 14 32, 18 28, 24 22 S 36 12, 40 6"/>
+        <circle class="pin" cx="10" cy="38" r="2.5"/>
+        <circle class="pin" cx="22" cy="24" r="2.5"/>
+        <circle class="accent" cx="38" cy="8" r="3.2"/>
+      </svg>
+      <h3>Business Development<br><em>that moves the line.</em></h3>
+      <p>Strategic outreach, partnership architecture, and pipeline building for founder-led companies who want to grow without losing the soul of what they've built.</p>
+      <a href="contact.html" class="practice-link">Inquire <span>→</span></a>
+    </article>
+
+    <!-- Fix 4: IR card icon = mountain peak with a flag at the summit -->
+    <article class="practice-card reveal">
+      <div class="practice-num">02 · IR</div>
+      <svg class="practice-icon" viewBox="0 0 48 48" aria-hidden="true">
+        <path class="stroke" d="M4 40 L 18 18 L 26 28 L 34 14 L 44 40 Z"/>
+        <path class="stroke" d="M34 14 L 34 4"/>
+        <path class="accent" d="M34 5 L 42 8 L 34 11 Z"/>
+      </svg>
+      <h3>Investor Relations<br><em>built on belief.</em></h3>
+      <p>Cultivating warm introductions to angels, venture funds, and family offices focused on impact. Currently engaged with Terra Axis on fund-level IR and BD support.</p>
+      <a href="contact.html" class="practice-link">Inquire <span>→</span></a>
+    </article>
+
+    <!-- Fix 4: Marketing card icon = compass with a magenta needle -->
+    <article class="practice-card reveal">
+      <div class="practice-num">03 · Marketing</div>
+      <svg class="practice-icon" viewBox="0 0 48 48" aria-hidden="true">
+        <circle class="stroke" cx="24" cy="24" r="18"/>
+        <circle class="stroke" cx="24" cy="24" r="14"/>
+        <path class="accent" d="M24 10 L 27 24 L 24 38 L 21 24 Z"/>
+        <circle class="pin" cx="24" cy="24" r="2"/>
+      </svg>
+      <h3>Soul-led marketing<br><em>worth sharing.</em></h3>
+      <p>Three packaged tiers built for values-driven businesses across Okanogan County. Real strategy, real voice, real results. The first packaged offering, with more to come.</p>
+      <a href="services.html" class="practice-link">View Packages <span>→</span></a>
+    </article>
+  </div>
+</section>
+
+<!-- ========== HANNAH (ABOUT TEASER) ========== -->
+<section id="hannah">
+  <div class="hannah-inner">
+    <div class="hannah-photo-wrap reveal">
+      <div class="hannah-photo">
+        <img src="assets/hannah-portrait.jpg" alt="Hannah Weymuller, founder of Meraki Ascent"/>
+        <div class="hannah-photo-caption">
+          <div class="name">Hannah Weymuller</div>
+          <div class="role">Founder · Meraki Ascent LLC</div>
+        </div>
+      </div>
+      <div class="hannah-pink-block"></div>
+    </div>
+
+    <div class="reveal">
+      <div class="section-label">
+        <div class="label-line"></div>
+        <span class="label-text">The Founder</span>
+      </div>
+      <h2 class="section-heading">Strategic operator.<br><em>Human connector.</em></h2>
+
+      <p class="about-body">
+        Born and raised in Winthrop. Outdoor enthusiast and athlete, the kind of person who finishes one goal and is already eyeing the next one. <strong>Managing Partner at Terra Axis</strong> with five-plus years building revenue operations, business development, and marketing strategy across founder-led companies, impact funds, nonprofits, and higher education programs. Most recently led social and digital for <strong>Gamble Sands</strong>, one of the most-watched golf destinations in the Pacific Northwest.
+      </p>
+      <p class="about-body">
+        Alongside client work, I've founded and grown my own small-scale brands in the health and wellness and pet spaces, earning brand partnerships and proving the playbook from the inside out.
+      </p>
+      <p class="about-body">
+        Meraki Ascent is the practice I built around three things I deeply believe in: passion for the work, purpose in every connection, and progress that's measurable and real.
+      </p>
+
+      <div class="credentials-row">
+        <div class="credential">
+          <div class="credential-label">Experience</div>
+          <div class="credential-value">5+ Years</div>
+          <div class="credential-detail">Revenue Ops · BD · Marketing</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Headquartered</div>
+          <div class="credential-value">Methow Valley</div>
+          <div class="credential-detail">Okanogan County, WA</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Focus</div>
+          <div class="credential-value">Founder-Led</div>
+          <div class="credential-detail">Companies &amp; Impact Funds</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Athlete</div>
+          <div class="credential-value">D1 Triathlete</div>
+          <div class="credential-detail">USF · Inaugural Team</div>
+        </div>
+      </div>
+
+      <div class="about-callout">
+        <div class="about-callout-label">Beyond the Work</div>
+        <p>An avid sailor, skier, hiker, and explorer. I draw the same discipline and endurance into every engagement, with deep roots in the Pacific Northwest and a belief that sustainable stewardship matters in business as much as in nature.</p>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <a href="about.html" class="btn-secondary">Read the full story →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PHILOSOPHY (DARK QUOTE BAND) ========== -->
+<section id="philosophy">
+  <div class="philosophy-inner">
+    <div class="philosophy-quote reveal">
+      <div class="section-label">
+        <div class="label-line" style="background: var(--pink);"></div>
+        <span class="label-text">The Meaning of Meraki</span>
+      </div>
+      <p class="quote-text">Doing something with all your soul, creativity, and love. Leaving a piece of yourself in your work.</p>
+      <div class="quote-accent"></div>
+      <p class="quote-sub">/ Mare-uh-kye / · Greek</p>
+    </div>
+
+    <div class="pillars-list reveal">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-text">
+          <strong>Passion · The Fuel</strong>
+          <p>Showing up with your whole self, every time. Doing the work because you actually care about it, not because it's on the calendar.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-text">
+          <strong>Purpose · The Compass</strong>
+          <p>Aligning every connection, every introduction, every strategy with values that matter. For the founder, the investor, the planet, the community.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-text">
+          <strong>Progress · The Proof</strong>
+          <p>Movement. Measurable, intentional movement. Real growth that makes founders, investors, and the work itself meaningfully better than where it started.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="section-label" style="justify-content: center;">
+      <div class="label-line"></div>
+      <span class="label-text">Let's Talk</span>
+    </div>
+    <h2 class="cta-heading">Ready for the<br><em>next ascent?</em></h2>
+    <p class="cta-sub">
+      Whether you're a founder looking to grow, an investor seeking meaningful opportunities, or a values-driven business ready to share its story well, I'd love to connect. No pitch, no pressure. Just a conversation.
+    </p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-primary">Start a Conversation</a>
+      <a href="services.html" class="btn-secondary">See Services →</a>
+    </div>
+    <div class="cta-signoff">
+      <div class="script">— Hannah</div>
+      <div class="role">Founder · Meraki Ascent LLC</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER (real, shared across all pages) ========== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col footer-brand-block">
+      <img src="assets/logo-horizontal-white.png" alt="Meraki Ascent LLC"/>
+      <p class="footer-tag">Connecting people.<br>Driving meaningful growth.</p>
+      <div class="footer-pron">Mare-uh-kye Uh-sent</div>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Social Media Services</a></li>
+        <li><a href="services.html#beyond">BD &amp; IR</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:merakiascent@gmail.com">merakiascent@gmail.com</a></li>
+        <li><a href="tel:+15094334221">509.433.4221</a></li>
+        <li><a href="https://linkedin.com/in/hannah-weymuller" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-mantra">
+      <span>Passion</span><span class="dot">●</span>
+      <span>Purpose</span><span class="dot">●</span>
+      <span>Progress</span>
+    </div>
+    <div class="footer-copy">© 2026 Meraki Ascent LLC · Methow Valley · Okanogan County, WA</div>
+  </div>
+</footer>
+
+<script>
+  // Fix 9: Reveal animation removed. Sections are visible by default via CSS.
+  // Mobile nav close on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('nav').classList.remove('is-open'));
+  });
+</script>
+
+</body>
+</html>
