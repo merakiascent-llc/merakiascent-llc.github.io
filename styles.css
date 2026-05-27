@@ -796,6 +796,7 @@ footer {
    ============================================================ */
 .phone-frame {
   position: relative;
+  display: block;
   width: 100%;
   max-width: 320px;
   aspect-ratio: 9 / 19;
@@ -804,6 +805,19 @@ footer {
   padding: 6px;
   box-shadow: 0 24px 48px -24px rgba(60,20,40,0.45);
   margin: 0 auto;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+a.phone-frame:hover,
+a.phone-frame:focus-visible {
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 32px 56px -22px rgba(220, 26, 120, 0.40);
+}
+a.phone-frame:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 6px;
 }
 .phone-frame::before {
   content: '';
@@ -875,9 +889,9 @@ footer {
   margin: 2rem auto 0;
 }
 .phone-masonry .phone-frame { margin: 0; }
-.phone-masonry > div:nth-child(2) { margin-top: 40px; }
-.phone-masonry > div:nth-child(3) { margin-top: -40px; }
-.phone-masonry > div:nth-child(4) { margin-top: 80px; }
+.phone-masonry > *:nth-child(2) { margin-top: 40px; }
+.phone-masonry > *:nth-child(3) { margin-top: -40px; }
+.phone-masonry > *:nth-child(4) { margin-top: 80px; }
 
 /* Account breakout sections */
 .account-breakout {
@@ -1158,9 +1172,9 @@ body.lightbox-open { overflow: hidden; }
     max-width: 320px;
     gap: 1.5rem;
   }
-  .phone-masonry > div:nth-child(2),
-  .phone-masonry > div:nth-child(3),
-  .phone-masonry > div:nth-child(4) { margin-top: 0; }
+  .phone-masonry > *:nth-child(2),
+  .phone-masonry > *:nth-child(3),
+  .phone-masonry > *:nth-child(4) { margin-top: 0; }
 
   .account-breakout {
     grid-template-columns: 1fr;
