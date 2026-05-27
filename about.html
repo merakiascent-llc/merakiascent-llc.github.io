@@ -370,6 +370,8 @@
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to content</a>
+
 <!-- ========== NAV ========== -->
 <nav id="nav">
   <a class="nav-brand" href="index.html">
@@ -383,9 +385,23 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html" class="is-active">About</a></li>
     <li><a href="services.html">Services</a></li>
+    <li class="has-dropdown">
+      <a href="portfolio.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+        Portfolio
+        <svg class="dropdown-chevron" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 4 L5 7 L8 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="portfolio.html">Overview</a></li>
+        <li><a href="portfolio-writing.html">Writing</a></li>
+        <li><a href="portfolio-social.html">Social Media</a></li>
+        <li><a href="portfolio-photography.html">Photography</a></li>
+      </ul>
+    </li>
     <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
   </ul>
 </nav>
+
+<span id="main" tabindex="-1"></span>
 
 <!-- ========== PAGE HERO ========== -->
 <section class="page-hero has-image">
@@ -626,6 +642,55 @@
   </div>
 </section>
 
+<!-- ========== WRITING & PRESS (teaser) ========== -->
+<section class="section section-cream">
+  <div class="section-inner">
+    <div class="section-label">
+      <div class="label-line"></div>
+      <span class="label-text">Writing &amp; Press</span>
+    </div>
+    <h2 class="section-heading">Words <em>worth sharing.</em></h2>
+    <p style="max-width: 620px; color: var(--mid); line-height: 1.8; margin-bottom: 2rem;">
+      I write about strategy, lived lessons, and the climbs that taught me something. Mostly on LinkedIn for now, with more places to come.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-bottom: 1.8rem;">
+      <a href="portfolio-writing.html" class="article-card compact">
+        <div class="article-card-thumb"><img src="assets/article-impostor.jpg" alt="Cover image for Hold the Impostor's Hand" loading="lazy"/></div>
+        <div class="article-card-body">
+          <div class="article-meta-row">
+            <span class="article-publication">LinkedIn · Self-Published</span>
+            <span class="article-date">May 2026</span>
+          </div>
+          <h3>Hold the Impostor's Hand</h3>
+        </div>
+      </a>
+      <a href="portfolio-writing.html" class="article-card compact">
+        <div class="article-card-thumb"><img src="assets/article-deer-trail.jpg" alt="Cover image for 8 Years in the Making" loading="lazy"/></div>
+        <div class="article-card-body">
+          <div class="article-meta-row">
+            <span class="article-publication">LinkedIn · Self-Published</span>
+            <span class="article-date">April 2026</span>
+          </div>
+          <h3>8 Years in the Making: How I Became Managing Partner at 26</h3>
+        </div>
+      </a>
+      <a href="portfolio-writing.html" class="article-card compact">
+        <div class="article-card-thumb"><img src="assets/article-bottleneck.jpg" alt="Cover image for The Bottleneck Nobody Talks About" loading="lazy"/></div>
+        <div class="article-card-body">
+          <div class="article-meta-row">
+            <span class="article-publication">LinkedIn · Self-Published</span>
+            <span class="article-date">April 2026</span>
+          </div>
+          <h3>The Bottleneck Nobody Talks About. And the Tech Quietly Solving It.</h3>
+        </div>
+      </a>
+    </div>
+
+    <a href="portfolio-writing.html" class="article-link">See all writing →</a>
+  </div>
+</section>
+
 <!-- ========== FINAL CTA ========== -->
 <section id="final-cta">
   <div class="section-label" style="justify-content: center;">
@@ -655,6 +720,15 @@
         <li><a href="services.html">Social Media Services</a></li>
         <li><a href="services.html#beyond">BD &amp; IR</a></li>
         <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Portfolio</h4>
+      <ul>
+        <li><a href="portfolio.html">Overview</a></li>
+        <li><a href="portfolio-writing.html">Writing</a></li>
+        <li><a href="portfolio-social.html">Social Media</a></li>
+        <li><a href="portfolio-photography.html">Photography</a></li>
       </ul>
     </div>
     <div class="footer-col">

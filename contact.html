@@ -196,6 +196,8 @@
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to content</a>
+
 <!-- ========== NAV ========== -->
 <nav id="nav">
   <a class="nav-brand" href="index.html">
@@ -209,9 +211,23 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
+    <li class="has-dropdown">
+      <a href="portfolio.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+        Portfolio
+        <svg class="dropdown-chevron" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 4 L5 7 L8 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="portfolio.html">Overview</a></li>
+        <li><a href="portfolio-writing.html">Writing</a></li>
+        <li><a href="portfolio-social.html">Social Media</a></li>
+        <li><a href="portfolio-photography.html">Photography</a></li>
+      </ul>
+    </li>
     <li><a href="contact.html" class="nav-cta is-active">Get in Touch</a></li>
   </ul>
 </nav>
+
+<span id="main" tabindex="-1"></span>
 
 <!-- ========== PAGE HERO ========== -->
 <section class="page-hero has-image">
@@ -430,6 +446,15 @@
         <li><a href="services.html">Social Media Services</a></li>
         <li><a href="services.html#beyond">BD &amp; IR</a></li>
         <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Portfolio</h4>
+      <ul>
+        <li><a href="portfolio.html">Overview</a></li>
+        <li><a href="portfolio-writing.html">Writing</a></li>
+        <li><a href="portfolio-social.html">Social Media</a></li>
+        <li><a href="portfolio-photography.html">Photography</a></li>
       </ul>
     </div>
     <div class="footer-col">

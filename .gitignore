@@ -15,3 +15,7 @@
 # Local dev artifacts
 node_modules/
 .cache/
+
+# Working files not for deployment
+claude-code-portfolio-brief.md
+*-brief.md

@@ -499,6 +499,8 @@
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to content</a>
+
 <!-- ========== NAV ========== -->
 <nav id="nav">
   <a class="nav-brand" href="index.html">
@@ -512,9 +514,23 @@
     <li><a href="index.html" class="is-active">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
+    <li class="has-dropdown">
+      <a href="portfolio.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+        Portfolio
+        <svg class="dropdown-chevron" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 4 L5 7 L8 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="portfolio.html">Overview</a></li>
+        <li><a href="portfolio-writing.html">Writing</a></li>
+        <li><a href="portfolio-social.html">Social Media</a></li>
+        <li><a href="portfolio-photography.html">Photography</a></li>
+      </ul>
+    </li>
     <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
   </ul>
 </nav>
+
+<span id="main" tabindex="-1"></span>
 
 <!-- ========== HERO ========== -->
 <section id="home">
@@ -738,6 +754,17 @@
   </div>
 </section>
 
+<!-- As Featured In strip. Add new publications as separate flex items inside .featured-logos. Each logo should be ~32px tall, monochrome dark plum, with the publication name as alt text. -->
+<section class="featured-strip">
+  <span class="eyebrow-text">As Featured In</span>
+  <div class="featured-logos">
+    <a class="featured-logo" href="portfolio-writing.html">
+      <span class="logo-mark">LinkedIn</span>
+      <span class="logo-meta">Self-Published, 2025&ndash;Present</span>
+    </a>
+  </div>
+</section>
+
 <!-- ========== PHILOSOPHY (DARK QUOTE BAND) ========== -->
 <section id="philosophy">
   <div class="philosophy-inner">
@@ -814,6 +841,15 @@
         <li><a href="services.html">Social Media Services</a></li>
         <li><a href="services.html#beyond">BD &amp; IR</a></li>
         <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Portfolio</h4>
+      <ul>
+        <li><a href="portfolio.html">Overview</a></li>
+        <li><a href="portfolio-writing.html">Writing</a></li>
+        <li><a href="portfolio-social.html">Social Media</a></li>
+        <li><a href="portfolio-photography.html">Photography</a></li>
       </ul>
     </div>
     <div class="footer-col">
