@@ -1553,3 +1553,53 @@ body.lightbox-open { overflow: hidden; }
   clip-path: polygon(100% 0, 100% 100%, 0 0);
   z-index: 1;
 }
+
+/* ============================================================
+   PHONE-SCREEN with IMAGE (Social Media page — IG grid)
+   Overrides the default centered-text phone-screen layout.
+   ============================================================ */
+.phone-screen.has-image {
+  padding: 0;
+  display: block;
+}
+.phone-screen.has-image::after { display: none; }  /* no shimmer over image */
+.phone-screen.has-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Account pull quote (Layla) */
+.account-pullquote {
+  margin-top: 1.4rem;
+  padding: 1rem 1.4rem;
+  border-left: 2px solid var(--pink);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--pink-deep);
+  background: var(--pink-mist);
+  border-radius: 0 2px 2px 0;
+  max-width: 90%;
+}
+
+/* View on Instagram link */
+.account-ig-link {
+  display: inline-block;
+  margin-top: 1.6rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 600;
+  border-bottom: 1px solid var(--pink);
+  padding-bottom: 3px;
+  transition: gap 0.2s ease;
+}
+.account-ig-link:hover {
+  color: var(--pink-deep);
+  border-bottom-color: var(--pink-deep);
+}

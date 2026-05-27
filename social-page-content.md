@@ -16,9 +16,9 @@ All four Instagram account descriptions in final, voice-checked form. Ready to s
 
 ---
 
-## Account 2 — @happyhealthyhann
+## Account 2 — @happy_healthy_hann
 
-- **Handle:** `@happyhealthyhann`
+- **Handle:** `@happy_healthy_hann`
 - **Category label:** Owner · Food & Wellness
 - **Description:**
 
@@ -26,9 +26,9 @@ All four Instagram account descriptions in final, voice-checked form. Ready to s
 
 ---
 
-## Account 3 — @Layla_Weymuller
+## Account 3 — @layla_weymuller
 
-- **Handle:** `@Layla_Weymuller`
+- **Handle:** `@layla_weymuller`
 - **Category label:** Owner · Pet & Lifestyle
 - **Description:**
 
@@ -42,9 +42,9 @@ All four Instagram account descriptions in final, voice-checked form. Ready to s
 
 ---
 
-## Account 4 — @Louploup_ski_team
+## Account 4 — @louploup_ski_team
 
-- **Handle:** `@Louploup_ski_team`
+- **Handle:** `@louploup_ski_team`
 - **Category label:** Manager + Coach · Ski Team Community
 - **Description:**
 
@@ -64,13 +64,29 @@ For each of the 4 account-breakout blocks, swap:
 
 ### 2. Add the Layla pull quote
 
-For the `@Layla_Weymuller` block only, add a pull quote element styled as italic Fraunces in magenta. Place visually adjacent to the description (designer's call on exact layout). Existing CSS likely supports this via the `.section-heading` italic em pattern or by adding a new `.account-pullquote` class.
+For the `@layla_weymuller` block only, add a pull quote element styled as italic Fraunces in magenta. Place visually adjacent to the description (designer's call on exact layout). Existing CSS likely supports this via the `.section-heading` italic em pattern or by adding a new `.account-pullquote` class.
 
 ### 3. Verify the 5th account slot
 
 The original handoff doc was built for 4 accounts. Hannah owns a 5th (`@i_spy_vanity`, a vanity license plate hobby account) that has been **intentionally excluded** from the portfolio page. If `portfolio-social.html` has a 5th account-breakout block, remove it. If not, no action needed.
 
-### 4. Final voice check before commit
+### 4. Phone frame screenshots (placeholder until IG embed widgets are wired)
+
+Each `.phone-frame` block currently has `<!-- TODO: replace with embed widget -->` comments. As an interim solution until Elfsight/SnapWidget embeds are added, place a static screenshot of each account's grid view inside the phone screen.
+
+Hannah has provided 4 IG profile screenshots. They need to be:
+
+1. **Cropped to just the 3x3 grid area** (cut off the handle bar at the top, the tab icons row, and the bottom navigation bar). The result should be a clean rectangle of just the photo thumbnails, no Instagram app chrome.
+2. **Saved into `/assets/`** with these filenames:
+   - `ig-grid-hann-runs.jpg`
+   - `ig-grid-happy-healthy-hann.jpg`
+   - `ig-grid-layla.jpg`
+   - `ig-grid-louploup.jpg`
+3. **Placed inside each account's `.phone-screen` element** using `object-fit: cover` and `object-position: top` so the grid fills the phone screen naturally.
+
+If the original screenshots are too tall for the phone-screen aspect ratio, crop further so only the top 6-9 thumbnails are visible. The goal is "real IG feed inside the phone," not "letterboxed screenshot."
+
+### 5. Final voice check before commit
 
 Confirm none of the descriptions contain:
 - Em dashes
@@ -80,17 +96,18 @@ Confirm none of the descriptions contain:
 
 ---
 
-## Handle verification flags (Hannah, ~2 minutes)
+## Handle verification — RESOLVED
 
-Two handles were corrected mid-conversation from what the original handoff doc said. Worth eyeballing on Instagram to confirm before commit:
+All four handles have been verified via Instagram screenshots. Final correct handles:
 
-| What the original doc said | What we're using now | Verify? |
-|----------------------------|----------------------|---------|
-| `@happyhealthyhann.food` | `@happyhealthyhann` | Yes |
-| `@laylas.account` | `@Layla_Weymuller` | Yes |
-| `@louplouxskiteam` | `@Louploup_ski_team` | Yes (capitalization + underscore placement) |
+| Account | Final handle |
+|---------|--------------|
+| Running | `@hann.runs` |
+| Food | `@happy_healthy_hann` |
+| Layla | `@layla_weymuller` |
+| Ski team | `@louploup_ski_team` |
 
-Just pull up Instagram and confirm the handles match what's actually on the accounts. If any of them are wrong, tell Claude Code the correct version before committing.
+Note that 3 of the 4 were misspelled in the original handoff doc. The versions in this doc are the verified correct ones.
 
 ---
 
