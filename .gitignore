@@ -19,3 +19,5 @@ node_modules/
 # Working files not for deployment
 claude-code-portfolio-brief.md
 *-brief.md
+*[Bb]rief*.md
+assets/Top photos/
