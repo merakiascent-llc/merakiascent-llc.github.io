@@ -3,146 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About · Meraki Ascent LLC</title>
-  <meta name="description" content="The story behind Meraki Ascent. Founder Hannah Weymuller on soul-led strategy, the meaning of Meraki, and what it means to climb with purpose.">
+  <title>About the Founder · Meraki Ascent LLC</title>
+  <meta name="description" content="Hi, I'm Hannah. Methow girl, founder since twelve, still climbing. The story behind Meraki Ascent, told as a timeline of a founder.">
   <link rel="icon" type="image/png" href="assets/logo-icon-color.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ========= FOUNDER NOTE (sticky photo + bio) ========= */
-    #founder {
-      padding: 6rem 5rem;
-      background: var(--white);
-    }
-    .founder-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .founder-photo-col {
-      position: sticky; top: 100px;
-    }
-    .founder-photo-wrap { position: relative; }
-    .founder-photo {
-      position: relative;
-      border-radius: 3px;
-      overflow: hidden;
-      aspect-ratio: 3/4;
-      max-width: 380px;
-      box-shadow: 0 30px 60px -30px rgba(60, 20, 40, 0.4);
-    }
-    .founder-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-      display: block;
-    }
-    .founder-pink-block {
-      position: absolute;
-      top: -1.5rem; left: -1.5rem;
-      width: 100px; height: 100px;
-      background: rgba(220, 26, 120, 0.12);
-      border-radius: 2px;
-      z-index: -1;
-    }
-    .founder-photo-caption {
-      margin-top: 1.5rem;
-      max-width: 380px;
-    }
-    .founder-photo-caption .name {
-      font-family: 'Caveat', cursive;
-      font-size: 1.6rem;
-      color: var(--pink);
-      font-weight: 600;
-    }
-    .founder-photo-caption .role {
-      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--light-mid); font-weight: 500;
-      margin-top: 0.2rem;
-    }
-
-    .founder-body p {
-      font-size: 1rem; line-height: 1.95; color: var(--mid);
-      margin-bottom: 1.4rem;
-    }
-    .founder-body p strong { color: var(--dark); font-weight: 500; }
-
-    .pull-quote {
-      margin: 2.5rem 0;
-      padding: 1.8rem 2rem;
-      border-left: 3px solid var(--pink);
-      background: var(--pink-mist);
-      border-radius: 0 2px 2px 0;
-      font-family: 'Fraunces', serif;
-      font-style: italic;
-      font-size: 1.25rem;
-      line-height: 1.55;
-      color: var(--dark);
-    }
-
-    .signoff {
-      margin-top: 2.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-    .signoff .script {
-      font-family: 'Caveat', cursive;
-      font-size: 1.7rem;
-      color: var(--pink);
-      font-weight: 600;
-    }
-    .signoff .role {
-      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--light-mid); font-weight: 500; margin-top: 0.2rem;
-    }
-
-    /* ========= FEATURED ARTICLE LINK ========= */
-    .featured-article {
-      margin-top: 2.5rem;
-      padding: 1.6rem 1.8rem;
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--pink);
-      border-radius: 0 2px 2px 0;
-      display: flex; align-items: center; gap: 1.4rem;
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.2s, background 0.2s;
-    }
-    .featured-article:hover {
-      border-color: var(--pink);
-      background: var(--pink-mist);
-      transform: translateY(-2px);
-    }
-    .featured-article-icon {
-      flex-shrink: 0;
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: var(--pink);
-      color: var(--white);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .featured-article-icon svg { width: 22px; height: 22px; fill: currentColor; }
-    .featured-article-text .label {
-      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--pink); font-weight: 500; margin-bottom: 0.35rem;
-    }
-    .featured-article-text .title {
-      font-family: 'Fraunces', serif;
-      font-size: 1.05rem; font-style: italic;
-      color: var(--dark); font-weight: 500;
-      line-height: 1.4;
-      margin-bottom: 0.35rem;
-    }
-    .featured-article-text .source {
-      font-size: 0.78rem; color: var(--mid);
-      letter-spacing: 0.04em;
-    }
-
-    /* ========= BEYOND THE WORK (Layla band) ========= */
+    /* ===== Beyond the Work (Layla band, carried over) ===== */
     .beyond-work {
       padding: 5rem 5rem;
       background: var(--off-white);
@@ -167,204 +36,59 @@
       object-position: center 40%;
       display: block;
     }
-    .beyond-work-caption {
-      position: absolute; left: 0; right: 0; bottom: 0;
-      padding: 1rem 1.4rem;
-      color: var(--white);
-      background: linear-gradient(to top, rgba(60,20,40,0.85), transparent);
-      font-family: 'Caveat', cursive;
-      font-size: 1.2rem;
-      font-weight: 500;
-    }
     .beyond-work-text h2 em { font-style: italic; color: var(--pink-deep); }
     .beyond-work-text p {
       font-size: 1rem; line-height: 1.85; color: var(--mid);
       margin-bottom: 1.2rem;
     }
 
-    /* ========= NAME DECODED (dark band) ========= */
-    .decoded-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    .decoded-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 3px;
-      padding: 2.2rem;
-    }
-    .decoded-word {
-      font-family: 'Fraunces', serif;
-      font-size: 2rem; font-weight: 500;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-    .decoded-pron {
-      font-family: 'Caveat', cursive;
-      font-size: 1.2rem;
-      color: var(--pink-light);
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
-    .decoded-tag {
-      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--pink); font-weight: 500;
-      margin-bottom: 1.2rem;
-    }
-    .decoded-body {
-      font-size: 0.95rem; line-height: 1.75;
-      color: rgba(255,255,255,0.78);
-    }
-    .decoded-our {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255,255,255,0.10);
-      font-size: 0.9rem; line-height: 1.7;
-      color: rgba(255,255,255,0.65);
-    }
-    .decoded-our strong {
-      color: var(--pink-light);
-      font-weight: 500;
-      font-style: italic;
-      font-family: 'Fraunces', serif;
-      letter-spacing: 0.02em;
-      margin-right: 0.4rem;
-    }
-
-    /* ========= VALUES (cream) ========= */
-    .values-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .value-card {
+    /* Section 5 "what I'm building" lead with bridge to Meraki page */
+    .building-now {
+      padding: 5rem 1.5rem;
       background: var(--white);
-      border: 1px solid var(--border);
-      padding: 2.2rem;
-      border-radius: 3px;
-      transition: border-color 0.3s, transform 0.3s;
     }
-    .value-card:hover {
-      border-color: var(--pink);
-      transform: translateY(-3px);
+    .building-now-inner {
+      max-width: 760px; margin: 0 auto;
     }
-    .value-num {
-      font-family: 'Fraunces', serif; font-style: italic;
-      color: var(--pink); font-size: 1.1rem;
-      margin-bottom: 0.6rem;
-    }
-    .value-card h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 1.35rem; font-weight: 500;
-      color: var(--dark);
-      margin-bottom: 0.4rem;
-    }
-    .value-card .value-sub {
-      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--pink); font-weight: 500;
-      margin-bottom: 1rem;
-    }
-    .value-card p {
-      font-size: 0.92rem; line-height: 1.75; color: var(--mid);
-    }
-
-    /* ========= DIFFERENTIATOR ========= */
-    .diff-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-      margin-top: 2rem;
-    }
-    .diff-row {
-      padding: 1.8rem 0;
-      border-top: 1px solid var(--border);
-    }
-    .diff-row h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 1.2rem; font-weight: 500;
-      color: var(--dark); margin-bottom: 0.6rem;
-    }
-    .diff-row h3 em { font-style: italic; color: var(--pink-deep); }
-    .diff-row p {
-      font-size: 0.92rem; line-height: 1.75; color: var(--mid);
-    }
-    .diff-row .num {
-      font-family: 'Fraunces', serif; font-style: italic;
-      color: var(--pink); font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.5rem;
-    }
-
-    /* ========= BUILT FOR / NOT FIT ========= */
-    .fit-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .fit-card {
-      padding: 2.2rem;
-      border-radius: 3px;
-    }
-    .fit-card.built {
-      background: var(--white);
-      border: 1px solid var(--border);
-    }
-    .fit-card.notfit {
-      background: var(--off-white);
-      border: 1px dashed var(--border);
-    }
-    .fit-card h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 1.3rem; font-weight: 500;
-      color: var(--dark);
+    .building-now p {
+      font-size: 1.05rem; line-height: 1.85; color: var(--mid);
       margin-bottom: 1.4rem;
     }
-    .fit-list {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 0.9rem;
+    .building-now strong { color: var(--dark); font-weight: 500; }
+    .building-now-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pink);
+      font-weight: 600;
+      border-bottom: 1px solid var(--pink);
+      padding-bottom: 3px;
+      transition: gap 0.2s;
     }
-    .fit-list li {
-      display: flex; align-items: flex-start; gap: 0.8rem;
-      font-size: 0.95rem; line-height: 1.6;
-      color: var(--mid);
-    }
-    .fit-list svg {
-      flex-shrink: 0;
-      width: 20px; height: 20px;
-      margin-top: 0.15rem;
-    }
-    .built .fit-list svg { color: var(--pink); }
-    .notfit .fit-list { color: var(--light-mid); }
-    .notfit .fit-list svg { color: var(--light-mid); }
+    .building-now-link:hover { gap: 0.75rem; }
 
-    /* ========= FINAL CTA ========= */
-    #final-cta { padding: 6rem 5rem; background: var(--off-white); text-align: center; }
-    #final-cta h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 400; color: var(--dark);
-      margin-bottom: 1rem;
+    /* Writing & Press teaser (carried over) */
+    .writing-teaser {
+      padding: 5rem 1.5rem;
+      background: var(--off-white);
     }
-    #final-cta h2 em { font-style: italic; color: var(--pink-deep); }
-    #final-cta p {
-      max-width: 560px; margin: 0 auto 2rem;
-      color: var(--mid); line-height: 1.8;
+    .writing-teaser-inner {
+      max-width: 1000px; margin: 0 auto;
     }
-    .final-cta-actions {
-      display: inline-flex; gap: 1.5rem; flex-wrap: wrap;
-      justify-content: center; align-items: center;
+    .writing-teaser-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
     }
 
-    /* ========= RESPONSIVE ========= */
     @media (max-width: 900px) {
-      #founder { padding: 4rem 1.5rem; }
-      .founder-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .founder-photo-col { position: static; }
-      .founder-pink-block { display: none; }
-      .decoded-grid { grid-template-columns: 1fr; }
-      .values-grid  { grid-template-columns: 1fr; }
-      .diff-grid    { grid-template-columns: 1fr; gap: 0; }
-      .fit-grid     { grid-template-columns: 1fr; }
-      #final-cta    { padding: 4rem 1.5rem; }
-      .pull-quote   { padding: 1.4rem 1.4rem; font-size: 1.1rem; }
-      .beyond-work  { padding: 3.5rem 1.5rem; }
+      .beyond-work { padding: 3rem 1.5rem; }
       .beyond-work-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .building-now { padding: 3rem 1.5rem; }
+      .writing-teaser { padding: 3rem 1.5rem; }
     }
   </style>
 </head>
@@ -383,7 +107,16 @@
   </button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="is-active">About</a></li>
+    <li class="has-dropdown">
+      <a href="about.html" class="dropdown-toggle is-active" aria-haspopup="true" aria-expanded="false">
+        About
+        <svg class="dropdown-chevron" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 4 L5 7 L8 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="about.html" class="is-active">About the Founder</a></li>
+        <li><a href="about-meraki.html">About Meraki Ascent</a></li>
+      </ul>
+    </li>
     <li><a href="services.html">Services</a></li>
     <li class="has-dropdown">
       <a href="portfolio.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
@@ -403,17 +136,18 @@
 
 <span id="main" tabindex="-1"></span>
 
-<!-- ========== PAGE HERO ========== -->
+<!-- ========== SECTION 1 · HERO ========== -->
 <section class="page-hero has-image">
   <div class="page-hero-inner">
     <div>
       <div class="section-label">
         <div class="label-line"></div>
-        <span class="label-text">About</span>
+        <span class="label-text">About the Founder</span>
       </div>
-      <h1>The story behind <em>the climb.</em></h1>
+      <h1>Hi, I'm <em>Hannah.</em></h1>
+      <p class="about-hero-kicker">Methow girl. Founder since twelve. Still climbing.</p>
       <p class="page-hero-sub">
-        Meraki Ascent is a multi-disciplinary consulting practice for founder-led, values-driven companies. The brand is personal because the work is too.
+        The work I do now is the latest pitch on a route I have been climbing my whole life. This is that story, in order.
       </p>
     </div>
     <div class="page-hero-image">
@@ -423,62 +157,117 @@
   </div>
 </section>
 
-<!-- ========== FOUNDER NOTE ========== -->
-<section id="founder">
-  <div class="founder-inner">
-    <div class="founder-photo-col">
-      <div class="founder-photo-wrap">
-        <div class="founder-photo">
-          <img src="assets/hannah-portrait.jpg" alt="Hannah Weymuller, founder of Meraki Ascent"/>
-        </div>
-        <div class="founder-pink-block"></div>
-      </div>
-      <div class="founder-photo-caption">
-        <div class="name">Hannah Weymuller</div>
-        <div class="role">Founder · Meraki Ascent LLC</div>
+<!-- ========== SECTION 2 · THE CLIMB STARTED IN MY PARENTS' KITCHEN ========== -->
+<section class="section section-cream">
+  <div class="section-inner about-section-body">
+    <div class="section-label">
+      <div class="label-line"></div>
+      <span class="label-text">Where it started</span>
+    </div>
+    <h2 class="section-heading">The climb started in my <em>parents' kitchen.</em></h2>
+
+    <p>Growing up, the rule in my parents' house was simple. You can have a sweet treat. But you have to make it yourself. And you have to clean up after yourself.</p>
+
+    <p>So I made every sweet treat I could imagine. Because I wanted to eat them.</p>
+
+    <p>By twelve, I was baking cakes from scratch. Cinnamon rolls. Macarons. Anything that sounded good. Eventually my parents pointed out that all this flour and butter and chocolate was costing somebody real money, and if I wanted to keep going I was going to need to start tracking it. Middle school math, suddenly applied.</p>
+
+    <p>That was the lesson that started everything. The first time I sold at the farmers market and learned that the money the customer hands you is not the money you actually made. You take the expenses out first. The yowch was real. My farmers market bottom line was not what twelve-year-old me thought it was.</p>
+
+    <!-- ===== Polaroid: the chocolate shot ===== -->
+    <!-- TODO: Hannah, drop the real photo at assets/chocolat_et_creme_photo.jpg to replace the placeholder. -->
+    <div class="polaroid-wrap">
+      <div class="polaroid-card">
+        <img src="assets/chocolat_et_creme_photo.jpg" alt="Young Hannah in a teal striped shirt and floral apron, breaking chocolate on a wooden cutting board. Photo by Weymuller Photography."/>
+        <div class="polaroid-caption">Chocolat et Crème<br><span style="color: var(--mid); font-size: 0.95em;">age 12 to high school · the original venture</span></div>
       </div>
     </div>
 
-    <div class="founder-body">
-      <div class="section-label">
-        <div class="label-line"></div>
-        <span class="label-text">Founder Note</span>
+    <p>So I leveled up. I called it <strong>Chocolat et Crème</strong>. I built a more reliable income, weekly dessert specials at Tappi, the local Italian restaurant in town. I made wedding cakes. I got my food handler's permit. I baked commercially out of a Washington-state-approved kitchen because that is what you have to do if you want to sell food to other humans legally. I also picked up an internship at Rocking Horse Bakery, getting in at 5:00 AM before school, because I figured if I was going to do this I should learn from someone who actually knew what they were doing.</p>
+
+    <p>I could not drive yet. My parents drove me to the bakery in the dark. Then I went to school. Then I played sports. Then I came home and did it again.</p>
+
+    <!-- ===== Optional secondary polaroid: the macaron tray ===== -->
+    <!-- TODO: Drop the real macaron photo at assets/chocolat_et_creme_1.jpg to replace placeholder. -->
+    <div class="polaroid-wrap smaller">
+      <div class="polaroid-card">
+        <img src="assets/chocolat_et_creme_1.jpg" alt="Young Hannah carefully arranging trays of orange and white macarons. Photo by Weymuller Photography."/>
+        <div class="polaroid-caption">Macarons · proof of skill</div>
       </div>
-      <h2 class="section-heading">A name that <em>fits the work.</em></h2>
-
-      <p>Some names just don't fit. You try something on and it's close, but it's not quite right. Too stiff. Too generic. Too corporate.</p>
-
-      <p>I'm an outdoor enthusiast and an athlete. The kind of person who finishes one goal and is already eyeing the next one. Born and raised in <strong>Winthrop</strong>, with a few peaks behind me literally and figuratively. Five-plus years building revenue operations, business development, and digital marketing across founder-led companies and impact funds. Most recently leading social and digital for <strong>Gamble Sands</strong>.</p>
-
-      <p>When I started building my own practice, I knew the name had to carry that energy. Gravity. Groundedness. Depth.</p>
-
-      <div class="pull-quote">
-        Then I found Meraki. A Greek word with no perfect English translation. It means pouring your whole soul into what you do. The opposite of going through the motions.
-      </div>
-
-      <p>Ascent came naturally after that. Because what is Meraki without direction? Passion without progress is just energy with nowhere to go.</p>
-
-      <div class="signoff">
-        <div class="script">— Hannah</div>
-        <div class="role">Founder · Meraki Ascent LLC</div>
-      </div>
-
-      <a href="https://www.linkedin.com/pulse/8-years-making-how-i-became-managing-partner-26-hannah-weymuller-h4bmc/"
-         class="featured-article" target="_blank" rel="noopener">
-        <div class="featured-article-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.5 17.5h-3v-9h3v9zM7 7.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zm11.5 10.3h-3v-4.5c0-1.1-.4-1.8-1.4-1.8s-1.6.7-1.6 1.8v4.5h-3v-9h3v1.3a3.3 3.3 0 0 1 2.9-1.5c2.1 0 3.1 1.4 3.1 3.7v5.5z"/></svg>
-        </div>
-        <div class="featured-article-text">
-          <div class="label">Featured Writing · LinkedIn</div>
-          <div class="title">8 years in the making: how I became managing partner at 26.</div>
-          <div class="source">Read the full piece on LinkedIn →</div>
-        </div>
-      </a>
     </div>
+
+    <p>I tell you this not because I am still selling chocolate. I am not. I tell you this because <strong>Meraki Ascent did not start in February 2026.</strong> It started the first time I figured out how to make something, name it, price it, sell it, and account for what it actually cost me to do it. The consultancy is the latest pitch on a route I have been climbing my whole life.</p>
+
+    <p style="margin-top: 2rem;">
+      <a href="https://www.facebook.com/chocolatetcreme/" target="_blank" rel="noopener" class="archived-link">The original Facebook page is still archived, here</a>
+    </p>
   </div>
 </section>
 
-<!-- ========== BEYOND THE WORK (Layla) ========== -->
+<!-- ========== SECTION 3 · I HAVE BEEN WRITING THE THESIS LONGER THAN I KNEW ========== -->
+<section class="section">
+  <div class="section-inner about-section-body">
+    <div class="section-label">
+      <div class="label-line"></div>
+      <span class="label-text">The Thesis, Earlier Than I Knew</span>
+    </div>
+    <h2 class="section-heading">I have been writing the thesis <em>longer than I knew.</em></h2>
+
+    <p>When I was sixteen, I started a blog. I called it <em>Skiing is Not Just Downhill</em>. I wrote four posts and stopped.</p>
+
+    <p>I re-read them recently. They are about fear. About the climb. About what hard work actually costs you and what it gives back.</p>
+
+    <p>Here is what got me: the tags I picked for those posts, as a junior in high school, read like the Meraki Ascent brand book. <em>Hard work pays off. Inspire. Learn. Trust.</em> I was already writing in this voice. I just did not know yet that I would build a business around it.</p>
+
+    <p>The blog is discontinued. I am not adding to it. Sixteen-year-old me said what she needed to say, and the time stamp is part of the proof.</p>
+
+    <p style="margin-top: 1.6rem;">
+      <a href="https://working4aline.wordpress.com/" target="_blank" rel="noopener" class="archived-link">Read the original here</a>
+    </p>
+  </div>
+</section>
+
+<!-- ========== SECTION 4 · THEN A LOT OF CLIMBING ========== -->
+<section class="section section-cream">
+  <div class="section-inner">
+    <div class="section-label">
+      <div class="label-line"></div>
+      <span class="label-text">Then a Lot of Climbing</span>
+    </div>
+    <h2 class="section-heading">Then a lot <em>of climbing.</em></h2>
+
+    <p class="about-list-paragraph">
+      Ski racing. D1 Triathlon. College. Creating internships. Graduating. Immersed in an SF startup. Learning to sail. Getting laid off, and then watching that company go bankrupt. Living a true finance girly life. Moving states. Creating jobs for myself. Pivoting to what feeds me. Creating a role for myself at a top golf course. Living and documenting my journey out loud and publicly, through the messy, the raw, the real, the ups and the downs. Getting engaged. Announcing managing partner at Terra Axis investment firm. Creating a business of my own, Meraki Ascent, around the passions that drive me.
+    </p>
+
+    <p class="about-thesis">
+      None of this was a summit or a finish line. Each is another step in the ever-evolving journey we call life.
+    </p>
+  </div>
+</section>
+
+<!-- ========== SECTION 5 · WHAT I AM BUILDING NOW (bridge to Meraki page) ========== -->
+<section class="building-now">
+  <div class="building-now-inner">
+    <div class="section-label">
+      <div class="label-line"></div>
+      <span class="label-text">What I am building now</span>
+    </div>
+    <h2 class="section-heading">Meraki Ascent LLC.</h2>
+
+    <p>The consulting practice I built around three things I deeply believe in: <strong>passion</strong> for the work, <strong>purpose</strong> in every connection, and <strong>progress</strong> that is measurable and real.</p>
+
+    <p>I do three things, and I do them with soul: <strong>Business Development. Investor Relations. Marketing.</strong> I sit at all three tables, and I speak founder, investor, and creative, fluently, in all three. That is rare. Sitting at all three tables with soul is rarer.</p>
+
+    <p>The social media side of the practice is built specifically for the businesses I grew up with, and the new ones I am watching grow now. If you are a values-driven business in Okanogan County building something worth sharing, I would love to be the person helping you share it. The investor relations side is anchored in a contracted partnership with <strong>Terra Axis</strong>, supporting their funds' IR and BD needs.</p>
+
+    <p>All of it is one practice. All of it is soul-led.</p>
+
+    <a href="about-meraki.html" class="building-now-link">Read about Meraki Ascent <span>→</span></a>
+  </div>
+</section>
+
+<!-- ========== BEYOND THE WORK (Layla band) ========== -->
 <section class="beyond-work">
   <div class="beyond-work-inner">
     <div class="beyond-work-image">
@@ -502,159 +291,19 @@
   </div>
 </section>
 
-<!-- ========== NAME DECODED (dark band) ========== -->
-<section class="section section-dark">
-  <div class="section-inner">
-    <div class="section-label" style="justify-content: flex-start;">
-      <div class="label-line"></div>
-      <span class="label-text">The Name, Decoded</span>
-    </div>
-    <h2 class="section-heading">Two words. <em>One direction.</em></h2>
-
-    <div class="decoded-grid">
-      <div class="decoded-card">
-        <div class="decoded-word">Meraki</div>
-        <div class="decoded-pron">/Mare-uh-kye/</div>
-        <div class="decoded-tag">Greek · noun</div>
-        <p class="decoded-body">A Greek word with no perfect English translation. To do something with soul, creativity, and love.</p>
-        <p class="decoded-our"><strong>For us:</strong> pouring yourself fully into the work. The opposite of going through the motions.</p>
-      </div>
-      <div class="decoded-card">
-        <div class="decoded-word">Ascent</div>
-        <div class="decoded-pron">/Uh-sent/</div>
-        <div class="decoded-tag">English · noun</div>
-        <p class="decoded-body">The act of climbing or moving upward. An upward slope or path.</p>
-        <p class="decoded-our"><strong>For us:</strong> the next peak. Intentional, values-driven growth as the direction.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== THREE VALUES (cream) ========== -->
-<section class="section section-cream">
-  <div class="section-inner">
-    <div class="section-label">
-      <div class="label-line"></div>
-      <span class="label-text">The Values</span>
-    </div>
-    <h2 class="section-heading">Passion. Purpose. <em>Progress.</em></h2>
-    <p style="max-width: 640px; color: var(--mid); line-height: 1.8; margin-bottom: 1rem;">
-      Three words. In this order, every time. Passion fuels the start, purpose keeps the line, progress proves the work.
-    </p>
-
-    <div class="values-grid">
-      <div class="value-card">
-        <div class="value-num">01</div>
-        <h3>Passion</h3>
-        <div class="value-sub">The Fuel</div>
-        <p>Showing up with your whole self, every time. Doing the work because you actually care about it, not because it's on the calendar.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-num">02</div>
-        <h3>Purpose</h3>
-        <div class="value-sub">The Compass</div>
-        <p>Aligning every connection, every introduction, every strategy with values that matter. For the founder, the investor, the planet, the community.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-num">03</div>
-        <h3>Progress</h3>
-        <div class="value-sub">The Proof</div>
-        <p>Measurable, intentional movement. Real growth that makes founders, investors, and the work itself meaningfully better than where it started.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== DIFFERENTIATOR ========== -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-label">
-      <div class="label-line"></div>
-      <span class="label-text">Why Meraki Ascent</span>
-    </div>
-    <h2 class="section-heading">Three reasons this <em>practice exists.</em></h2>
-
-    <div class="diff-grid">
-      <div class="diff-row">
-        <div class="num">01</div>
-        <h3>The <em>Translator.</em></h3>
-        <p>Speaks founder, investor, and creative fluently. Most people pick a lane. The work happens in the connections between them.</p>
-      </div>
-      <div class="diff-row">
-        <div class="num">02</div>
-        <h3>Soul-led, <em>not script-led.</em></h3>
-        <p>No templated outreach, no copy-paste decks, no auto-DM sequences. Every message and every introduction starts from real research and a real reason.</p>
-      </div>
-      <div class="diff-row">
-        <div class="num">03</div>
-        <h3>Experience-<em>informed.</em></h3>
-        <p>The ascent metaphor is lived, not marketing language. The discipline, the endurance, the patience for the long climb. Same on the trail, same in the work.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== BUILT FOR / NOT FIT ========== -->
-<section class="section section-cream">
-  <div class="section-inner">
-    <div class="section-label">
-      <div class="label-line"></div>
-      <span class="label-text">Built For (And Not)</span>
-    </div>
-    <h2 class="section-heading">Honest <em>about fit.</em></h2>
-    <p style="max-width: 640px; color: var(--mid); line-height: 1.8;">
-      The best engagements start with a yes from both sides. Here's where the work shines, and where it doesn't.
-    </p>
-
-    <div class="fit-grid">
-      <div class="fit-card built">
-        <h3>Built for</h3>
-        <ul class="fit-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13 L10 18 L20 6"/></svg>
-            Values-driven founders building for the long climb, not the quick exit.
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13 L10 18 L20 6"/></svg>
-            Impact investors, family offices, and venture funds focused on sustainable returns.
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13 L10 18 L20 6"/></svg>
-            Okanogan County businesses ready to invest in their story and their reach.
-          </li>
-        </ul>
-      </div>
-
-      <div class="fit-card notfit">
-        <h3>Not the right fit</h3>
-        <ul class="fit-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"/></svg>
-            Operators who already have all the answers and aren't actually open to the work.
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"/></svg>
-            MLMs, crypto speculation, political campaigns, and cannabis. Not a values judgment on each, just not where this practice plays.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== WRITING & PRESS (teaser) ========== -->
-<section class="section section-cream">
-  <div class="section-inner">
+<!-- ========== WRITING & PRESS TEASER ========== -->
+<section class="writing-teaser">
+  <div class="writing-teaser-inner">
     <div class="section-label">
       <div class="label-line"></div>
       <span class="label-text">Writing &amp; Press</span>
     </div>
-    <h2 class="section-heading">Words <em>worth sharing.</em></h2>
-    <p style="max-width: 620px; color: var(--mid); line-height: 1.8; margin-bottom: 2rem;">
+    <h2 class="section-heading">Words worth <em>sharing.</em></h2>
+    <p style="max-width: 640px; color: var(--mid); line-height: 1.8; margin-bottom: 1.4rem;">
       I write about strategy, lived lessons, and the climbs that taught me something. Mostly on LinkedIn for now, with more places to come.
     </p>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-bottom: 1.8rem;">
+    <div class="writing-teaser-grid">
       <a href="portfolio-writing.html" class="article-card compact">
         <div class="article-card-thumb"><img src="assets/article-impostor.jpg" alt="Cover image for Hold the Impostor's Hand" loading="lazy"/></div>
         <div class="article-card-body">
@@ -687,22 +336,22 @@
       </a>
     </div>
 
-    <a href="portfolio-writing.html" class="article-link">See all writing →</a>
+    <a href="portfolio-writing.html" class="article-link" style="font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink); font-weight: 600; border-bottom: 1px solid var(--pink); padding-bottom: 3px;">See all writing →</a>
   </div>
 </section>
 
-<!-- ========== FINAL CTA ========== -->
-<section id="final-cta">
-  <div class="section-label" style="justify-content: center;">
-    <div class="label-line"></div>
-    <span class="label-text">Sound Familiar?</span>
+<!-- ========== SECTION 6 · SIGN-OFF ========== -->
+<section class="about-signoff-block">
+  <div class="about-signoff-script">, Hannah</div>
+  <div class="about-signoff-role">Founder · Meraki Ascent LLC</div>
+  <div class="about-mantra-footer">
+    Passion<span class="dot">●</span>Purpose<span class="dot">●</span>Progress
   </div>
-  <h2>Sound like <em>your kind of practice?</em></h2>
-  <p>If something here lands, the next step is small. A 30-minute conversation, no pitch, no pressure.</p>
-  <div class="final-cta-actions">
-    <a href="contact.html" class="btn-primary">Start a Conversation</a>
-    <a href="services.html" class="btn-secondary">See Services →</a>
-  </div>
+</section>
+
+<!-- ========== SECTION 7 · FINAL CTA ========== -->
+<section class="about-final-cta">
+  <a href="contact.html" class="about-final-cta-link">Let's talk →</a>
 </section>
 
 <!-- ========== FOOTER ========== -->
@@ -716,7 +365,8 @@
     <div class="footer-col">
       <h4>Practice</h4>
       <ul>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About the Founder</a></li>
+        <li><a href="about-meraki.html">About Meraki Ascent</a></li>
         <li><a href="services.html">Social Media Services</a></li>
         <li><a href="services.html#beyond">BD &amp; IR</a></li>
         <li><a href="contact.html">Contact</a></li>

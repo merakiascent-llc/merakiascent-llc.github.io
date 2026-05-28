@@ -1686,3 +1686,151 @@ body.lightbox-open { overflow: hidden; }
   color: var(--pink-deep);
   border-bottom-color: var(--pink-deep);
 }
+
+/* ============================================================
+   ABOUT PAGE · polaroid, hero kicker, thesis pull-quote,
+   archived-link treatment, staccato list, sign-off, final CTA
+   ============================================================ */
+
+.about-hero-kicker {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  color: var(--pink-deep);
+  font-weight: 500;
+  margin: 0.6rem 0 1.6rem;
+  line-height: 1.3;
+}
+
+.polaroid-card {
+  display: inline-block;
+  background: var(--white);
+  padding: 0.9rem 0.9rem 0;
+  box-shadow: 0 22px 44px -16px rgba(60, 20, 40, 0.30);
+  transform: rotate(-2.5deg);
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
+  max-width: 360px;
+  margin: 0 auto;
+}
+.polaroid-card:hover { transform: rotate(-1deg) translateY(-4px); }
+.polaroid-card img { display: block; width: 100%; height: auto; }
+.polaroid-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--dark);
+  text-align: center;
+  padding: 1rem 0.4rem 1.2rem;
+}
+.polaroid-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem auto 1.5rem;
+  padding: 1rem 0;
+}
+.polaroid-wrap.smaller .polaroid-card {
+  max-width: 280px;
+  transform: rotate(2deg);
+}
+.polaroid-wrap.smaller .polaroid-card:hover {
+  transform: rotate(0.5deg) translateY(-4px);
+}
+
+.about-thesis {
+  margin: 3rem auto;
+  max-width: 760px;
+  padding: 2.4rem 1.5rem;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  line-height: 1.5;
+  color: var(--dark);
+  border-top: 1px solid var(--pink);
+  border-bottom: 1px solid var(--pink);
+}
+
+.about-list-paragraph {
+  font-size: 1.05rem;
+  line-height: 2.1;
+  color: var(--mid);
+  max-width: 760px;
+  margin: 0 auto;
+}
+.about-list-paragraph strong { color: var(--dark); font-weight: 500; }
+
+.archived-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--mid);
+  font-style: italic;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+  font-family: 'Fraunces', serif;
+}
+.archived-link:hover { color: var(--pink); border-bottom-color: var(--pink); }
+.archived-link::after { content: '↗'; font-size: 0.85em; opacity: 0.7; font-style: normal; margin-left: 0.1rem; }
+
+.about-section-body { max-width: 760px; margin: 0 auto; }
+.about-section-body p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--mid);
+  margin-bottom: 1.4rem;
+}
+.about-section-body p strong { color: var(--dark); font-weight: 500; }
+
+.about-signoff-block { text-align: center; padding: 3rem 1rem; }
+.about-signoff-script {
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  color: var(--pink);
+  font-weight: 600;
+  line-height: 1;
+}
+.about-signoff-role {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+.about-mantra-footer {
+  margin-top: 2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 600;
+}
+.about-mantra-footer .dot { margin: 0 0.5rem; color: var(--pink-light); }
+
+.about-final-cta {
+  text-align: center;
+  padding: 4rem 1.5rem 6rem;
+  background: var(--off-white);
+}
+.about-final-cta-link {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  color: var(--pink-deep);
+  border-bottom: 2px solid var(--pink);
+  padding-bottom: 4px;
+  transition: color 0.2s;
+}
+.about-final-cta-link:hover { color: var(--pink); }
+
+@media (max-width: 760px) {
+  .polaroid-card { max-width: 260px; padding: 0.7rem 0.7rem 0; }
+  .polaroid-caption { font-size: 1.1rem; padding: 0.8rem 0.3rem 1rem; }
+  .about-thesis { padding: 1.8rem 1rem; font-size: 1.15rem; margin: 2rem auto; }
+  .about-list-paragraph { font-size: 1rem; line-height: 1.95; }
+  .about-section-body p { font-size: 1rem; }
+  .about-signoff-script { font-size: 1.8rem; }
+  .about-final-cta { padding: 3rem 1.5rem 5rem; }
+}
