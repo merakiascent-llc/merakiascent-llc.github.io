@@ -723,73 +723,140 @@ footer {
 
 /* ============================================================
    PORTFOLIO LANDING CARDS (the 3 big cards on portfolio.html)
+   Bright pink cards with centered custom SVG graphic per medium.
+   White pill CTA inverts to deep plum on hover.
    ============================================================ */
 .portfolio-card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
-  margin-top: 2.5rem;
+  gap: 1.6rem;
+  margin-top: 3rem;
 }
 .portfolio-card {
   position: relative;
-  display: flex; flex-direction: column;
-  padding: 2.4rem 2rem 2rem;
-  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 4 / 5;
+  background: var(--pink);
   color: var(--white);
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s;
   text-decoration: none;
-  min-height: 360px;
+  padding: 1.8rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.3s ease;
+  box-shadow:
+    inset 0 0 60px rgba(60, 20, 40, 0.18),
+    0 22px 44px -22px rgba(220, 26, 120, 0.42);
 }
-.portfolio-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 28px 56px -28px rgba(60,20,40,0.55);
+.portfolio-card:hover,
+.portfolio-card:focus-visible {
+  transform: translateY(-8px);
+  background: var(--pink-deep);
+  box-shadow:
+    inset 0 0 80px rgba(42, 14, 27, 0.25),
+    0 36px 68px -22px rgba(220, 26, 120, 0.58);
+}
+.portfolio-card:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 4px;
+}
+/* Subtle plum L-bracket corner marks: top-left + bottom-right */
+.portfolio-card::before,
+.portfolio-card::after {
+  content: '';
+  position: absolute;
+  width: 16px; height: 16px;
+  z-index: 3;
+  pointer-events: none;
+  transition: border-color 0.3s ease;
 }
 .portfolio-card::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(circle at 80% 20%, rgba(220,26,120,0.18) 0%, transparent 50%),
-    radial-gradient(circle at 10% 90%, rgba(60,160,180,0.10) 0%, transparent 55%);
-  pointer-events: none;
+  top: 12px; left: 12px;
+  border-top: 2px solid rgba(60, 20, 40, 0.55);
+  border-left: 2px solid rgba(60, 20, 40, 0.55);
 }
-.portfolio-card > * { position: relative; z-index: 1; }
+.portfolio-card::after {
+  bottom: 12px; right: 12px;
+  border-bottom: 2px solid rgba(60, 20, 40, 0.55);
+  border-right: 2px solid rgba(60, 20, 40, 0.55);
+}
+.portfolio-card:hover::before,
+.portfolio-card:hover::after,
+.portfolio-card:focus-visible::before,
+.portfolio-card:focus-visible::after {
+  border-color: rgba(42, 14, 27, 0.75);
+}
 .portfolio-card-num {
   font-family: 'Fraunces', serif;
   font-style: italic;
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 400;
-  color: var(--pink);
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1;
-  margin-bottom: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+.portfolio-card-icon {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0 1.6rem;
+}
+.portfolio-card-icon svg {
+  width: 55%;
+  max-width: 170px;
+  height: auto;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.portfolio-card:hover .portfolio-card-icon svg,
+.portfolio-card:focus-visible .portfolio-card-icon svg {
+  transform: scale(1.08) rotate(-3deg);
+}
+.portfolio-card-bottom {
+  display: flex;
+  flex-direction: column;
 }
 .portfolio-card-eyebrow {
   font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
-  color: var(--pink-light); font-weight: 500;
-  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.85); font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 .portfolio-card h3 {
   font-family: 'Fraunces', serif;
   font-style: italic;
-  font-size: 1.6rem; font-weight: 400;
+  font-size: 1.7rem; font-weight: 400;
   color: var(--white);
-  line-height: 1.25;
-  margin-bottom: 1rem;
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
 }
 .portfolio-card p {
-  font-size: 0.93rem; line-height: 1.7;
-  color: rgba(255,255,255,0.78);
-  flex-grow: 1;
-  margin-bottom: 1.5rem;
+  font-size: 0.92rem; line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 1.2rem;
 }
 .portfolio-card-cta {
-  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--pink); font-weight: 600;
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  transition: gap 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  background: var(--white);
+  color: var(--dark);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background 0.25s ease, color 0.25s ease, gap 0.25s ease, transform 0.25s ease;
 }
-.portfolio-card:hover .portfolio-card-cta { gap: 0.75rem; }
+.portfolio-card:hover .portfolio-card-cta,
+.portfolio-card:focus-visible .portfolio-card-cta {
+  background: var(--dark);
+  color: var(--white);
+  gap: 0.7rem;
+  transform: translateY(-1px);
+}
 
 /* ============================================================
    PHONE FRAME (Social Media page; wraps any embed content)
@@ -1163,9 +1230,11 @@ body.lightbox-open { overflow: hidden; }
   .article-card-thumb { max-width: 100%; }
   .article-card h3 { font-size: 1.2rem; }
 
-  .portfolio-card-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .portfolio-card { min-height: 280px; padding: 1.8rem 1.4rem; }
-  .portfolio-card-num { font-size: 2.6rem; margin-bottom: 1rem; }
+  .portfolio-card-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .portfolio-card { aspect-ratio: 4/5; }
+  .portfolio-card-content { padding: 1.5rem; }
+  .portfolio-card-num { font-size: 2.6rem; }
+  .portfolio-card h3 { font-size: 1.5rem; }
 
   .phone-masonry {
     grid-template-columns: 1fr;
