@@ -84,11 +84,65 @@
       margin-bottom: 1.8rem;
     }
 
+    /* ===== Overlapping polaroid pair (kitchen section) ===== */
+    .polaroid-pair {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 3.5rem auto 2.5rem;
+      padding: 1rem 0;
+      max-width: 700px;
+    }
+    .polaroid-pair .polaroid-card {
+      margin: 0;
+      flex: 0 0 auto;
+      width: 260px;
+      max-width: 260px;
+      transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
+    }
+    .polaroid-pair .polaroid-card:first-child {
+      transform: rotate(-5deg) translateX(24px);
+      z-index: 2;
+    }
+    .polaroid-pair .polaroid-card:last-child {
+      transform: rotate(4deg) translateX(-24px);
+      z-index: 1;
+    }
+    .polaroid-pair .polaroid-card:hover { z-index: 3; }
+    .polaroid-pair .polaroid-card:first-child:hover {
+      transform: rotate(-3deg) translateX(24px) translateY(-8px);
+    }
+    .polaroid-pair .polaroid-card:last-child:hover {
+      transform: rotate(2deg) translateX(-24px) translateY(-8px);
+    }
+
     @media (max-width: 900px) {
       .beyond-work { padding: 3rem 1.5rem; }
       .beyond-work-inner { grid-template-columns: 1fr; gap: 2rem; }
       .building-now { padding: 3rem 1.5rem; }
       .writing-teaser { padding: 3rem 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .polaroid-pair {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 2.5rem auto 1.5rem;
+      }
+      .polaroid-pair .polaroid-card {
+        width: 240px; max-width: 240px;
+      }
+      .polaroid-pair .polaroid-card:first-child {
+        transform: rotate(-3deg) translateX(0);
+      }
+      .polaroid-pair .polaroid-card:last-child {
+        transform: rotate(2deg) translateX(0);
+      }
+      .polaroid-pair .polaroid-card:first-child:hover {
+        transform: rotate(-1deg) translateY(-4px);
+      }
+      .polaroid-pair .polaroid-card:last-child:hover {
+        transform: rotate(0deg) translateY(-4px);
+      }
     }
   </style>
 </head>
@@ -174,25 +228,20 @@
 
     <p>That was the lesson that started everything. The first time I sold at the farmers market and learned that the money the customer hands you is not the money you actually made. You take the expenses out first. The yowch was real. My farmers market bottom line was not what twelve-year-old me thought it was.</p>
 
-    <!-- ===== Polaroid: the chocolate shot ===== -->
-    <!-- TODO: Hannah, drop the real photo at assets/chocolat_et_creme_photo.jpg to replace the placeholder. -->
-    <div class="polaroid-wrap">
-      <div class="polaroid-card">
-        <img src="assets/chocolat_et_creme_photo.jpg" alt="Young Hannah in a teal striped shirt and floral apron, breaking chocolate on a wooden cutting board. Photo by Weymuller Photography."/>
-        <div class="polaroid-caption">Chocolat et Crème<br><span style="color: var(--mid); font-size: 0.95em;">age 12 to high school · the original venture</span></div>
-      </div>
-    </div>
-
     <p>So I leveled up. I called it <strong>Chocolat et Crème</strong>. I built a more reliable income, weekly dessert specials at Tappi, the local Italian restaurant in town. I made wedding cakes. I got my food handler's permit. I baked commercially out of a Washington-state-approved kitchen because that is what you have to do if you want to sell food to other humans legally. I also picked up an internship at Rocking Horse Bakery, getting in at 5:00 AM before school, because I figured if I was going to do this I should learn from someone who actually knew what they were doing.</p>
 
     <p>I could not drive yet. My parents drove me to the bakery in the dark. Then I went to school. Then I played sports. Then I came home and did it again.</p>
 
-    <!-- ===== Optional secondary polaroid: the macaron tray ===== -->
-    <!-- TODO: Drop the real macaron photo at assets/chocolat_et_creme_1.jpg to replace placeholder. -->
-    <div class="polaroid-wrap smaller">
+    <!-- ===== Overlapping polaroid pair: chocolate (front) + macaron (back) ===== -->
+    <!-- TODO: Drop real photos at assets/chocolat_et_creme_photo.jpg and assets/chocolat_et_creme_1.jpg -->
+    <div class="polaroid-pair">
+      <div class="polaroid-card">
+        <img src="assets/chocolat_et_creme_photo.jpg" alt="Young Hannah in a teal striped shirt and floral apron, breaking chocolate on a wooden cutting board. Photo by Weymuller Photography."/>
+        <div class="polaroid-caption">Chocolat et Crème<br><span style="color: var(--mid); font-size: 0.9em;">age 12 to high school</span></div>
+      </div>
       <div class="polaroid-card">
         <img src="assets/chocolat_et_creme_1.jpg" alt="Young Hannah carefully arranging trays of orange and white macarons. Photo by Weymuller Photography."/>
-        <div class="polaroid-caption">Macarons · proof of skill</div>
+        <div class="polaroid-caption">Macarons<br><span style="color: var(--mid); font-size: 0.9em;">proof of skill</span></div>
       </div>
     </div>
 
@@ -342,7 +391,7 @@
 
 <!-- ========== SECTION 6 · SIGN-OFF ========== -->
 <section class="about-signoff-block">
-  <div class="about-signoff-script">, Hannah</div>
+  <div class="about-signoff-script">Hannah</div>
   <div class="about-signoff-role">Founder · Meraki Ascent LLC</div>
   <div class="about-mantra-footer">
     Passion<span class="dot">●</span>Purpose<span class="dot">●</span>Progress
