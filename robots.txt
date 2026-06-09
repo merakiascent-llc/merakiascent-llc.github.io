@@ -1,0 +1,9 @@
+# Meraki Ascent LLC · merakiascent-llc.github.io
+User-agent: *
+Allow: /
+
+# Hide source-photo folder if it ever gets committed
+Disallow: /assets/Top photos/
+Disallow: /assets/Top%20photos/
+
+Sitemap: https://merakiascent-llc.github.io/sitemap.xml
