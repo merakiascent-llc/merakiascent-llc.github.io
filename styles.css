@@ -1861,3 +1861,317 @@ body.lightbox-open { overflow: hidden; }
   .about-signoff-script { font-size: 1.8rem; }
   .about-final-cta { padding: 3rem 1.5rem 5rem; }
 }
+
+/* ============================================================
+   TRUSTED BY — logo strip (homepage + about page)
+   ============================================================ */
+.trusted-by-section {
+  background: var(--off-white);
+  padding: 4.5rem 2rem;
+  text-align: center;
+}
+.trusted-by-inner { max-width: 1100px; margin: 0 auto; }
+.trusted-by-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+.trusted-by-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.trusted-by-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+.trusted-by-logo img {
+  max-height: 60px;
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+.trusted-by-logo:hover,
+.trusted-by-logo:focus-visible {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: translateY(-2px);
+}
+.trusted-by-logo.on-cream-invert {
+  filter: invert(0.55) brightness(0.55);
+  opacity: 1;
+}
+.trusted-by-logo.on-cream-invert:hover,
+.trusted-by-logo.on-cream-invert:focus-visible {
+  filter: invert(0.28) brightness(0.6);
+  transform: translateY(-2px);
+}
+.trusted-by-tagline {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--dark);
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .trusted-by-section { padding: 3rem 1.25rem; }
+  .trusted-by-logos { gap: 2rem 2.5rem; margin-bottom: 2rem; }
+  .trusted-by-logo { height: 46px; }
+  .trusted-by-logo img { max-height: 46px; max-width: 140px; }
+  .trusted-by-eyebrow { margin-bottom: 1.75rem; }
+  .trusted-by-tagline { font-size: 0.95rem; }
+}
+
+/* ============================================================
+   FOOTER — Currently Working With row
+   ============================================================ */
+.footer-clients-row {
+  border-top: 1px solid rgba(251, 248, 244, 0.1);
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.footer-clients-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pink-light);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.footer-clients-list {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(251, 248, 244, 0.6);
+  line-height: 1.5;
+}
+.footer-clients-list a {
+  color: rgba(251, 248, 244, 0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+  border-bottom: 1px solid transparent;
+}
+.footer-clients-list a:hover,
+.footer-clients-list a:focus-visible {
+  color: var(--pink-light);
+  border-bottom-color: rgba(232, 155, 190, 0.4);
+}
+.footer-clients-list .sep {
+  color: rgba(251, 248, 244, 0.3);
+  margin: 0 0.15rem;
+}
+
+@media (max-width: 760px) {
+  .footer-clients-row { padding: 1rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .footer-clients-list { font-size: 0.85rem; }
+}
+
+/* ============================================================
+   SOCIAL PORTFOLIO — three-part sections (Client / Community / Personal)
+   ============================================================ */
+.social-part {
+  padding: 4.5rem 2rem 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.social-part-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;
+}
+.social-part-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+}
+.social-part-heading {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  color: var(--dark);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+.social-part-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--mid);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Client detailed breakout (adapted from .account-breakout) */
+.client-breakout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 3.5rem 0;
+  border-top: 1px solid rgba(60, 20, 40, 0.08);
+}
+.client-breakout:first-of-type { border-top: none; }
+.client-breakout.reverse { grid-template-columns: 1.15fr 1fr; }
+.client-breakout.reverse .client-phone-col { order: 2; }
+.client-breakout.reverse .client-text-col { order: 1; }
+
+.client-phone-col { display: flex; justify-content: center; }
+
+.client-text-col { max-width: 560px; }
+.client-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  margin-bottom: 1.2rem;
+}
+.client-logo-mark img {
+  max-height: 44px;
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+.client-logo-mark.invert-on-light img {
+  filter: invert(0.55) brightness(0.55);
+}
+.client-category-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.client-name {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+  color: var(--dark);
+  line-height: 1.15;
+  margin: 0 0 0.3rem;
+}
+.client-handle-line {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--pink-deep);
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+.client-desc {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--mid);
+  margin: 0 0 1.4rem;
+}
+.client-role-preface {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+.client-role-desc {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--mid);
+  margin: 0 0 1.4rem;
+}
+.client-since-tag {
+  display: inline-block;
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--pink-deep);
+  margin-bottom: 1.4rem;
+}
+.client-stats-row {
+  display: flex;
+  gap: 2.5rem;
+  padding: 1.2rem 0 0.5rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid rgba(60, 20, 40, 0.08);
+  flex-wrap: wrap;
+}
+.client-stat { min-width: 100px; }
+.client-stat-value {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--dark);
+  line-height: 1.1;
+  margin-bottom: 0.2rem;
+}
+.client-stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--light-mid);
+  font-weight: 500;
+}
+.client-links-row {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.client-ig-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--pink);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.client-ig-link:hover { color: var(--pink-deep); }
+.client-web-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--light-mid);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.client-web-link:hover { color: var(--dark); }
+
+@media (max-width: 900px) {
+  .social-part { padding: 3rem 1.5rem 1rem; }
+  .client-breakout,
+  .client-breakout.reverse {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+  }
+  .client-breakout.reverse .client-phone-col { order: 1; }
+  .client-breakout.reverse .client-text-col { order: 2; }
+  .client-text-col { max-width: 100%; }
+  .client-stats-row { gap: 1.5rem; }
+}

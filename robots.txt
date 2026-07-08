@@ -1,9 +1,46 @@
-# Meraki Ascent LLC · merakiascent-llc.github.io
+# Meraki Ascent LLC · merakiascent.com
 User-agent: *
+Allow: /
+
+# Explicitly welcome AI / answer-engine crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
 Allow: /
 
 # Hide source-photo folder if it ever gets committed
 Disallow: /assets/Top photos/
 Disallow: /assets/Top%20photos/
 
-Sitemap: https://merakiascent-llc.github.io/sitemap.xml
+Sitemap: https://merakiascent.com/sitemap.xml
