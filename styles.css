@@ -1022,6 +1022,45 @@ a.phone-frame:focus-visible {
   margin: 0;
 }
 
+/* Banner item — wraps a client logo above the phone */
+.banner-item {
+  flex: 0 0 240px;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+.banner-item .phone-frame {
+  flex: none;
+  width: 100%;
+  margin: 0;
+}
+.banner-item-logo {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.banner-item-logo img {
+  max-height: 46px;
+  max-width: 170px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.banner-item-logo.invert-white img {
+  filter: invert(0.55) brightness(0.55);
+}
+
+@media (max-width: 900px) {
+  .banner-item { flex: 0 0 210px; gap: 0.7rem; }
+  .banner-item-logo { height: 36px; }
+  .banner-item-logo img { max-height: 36px; max-width: 140px; }
+}
+
 /* Nav arrows — only appear when the banner is scrollable */
 .phone-banner-nav {
   position: absolute;
