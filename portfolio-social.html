@@ -123,11 +123,6 @@
 </script>
   <!-- ===== End SEO / AEO metadata ===== -->
   <style>
-    .social-masonry-section {
-      padding: 3rem 5rem 2rem;
-      max-width: 1180px;
-      margin: 0 auto;
-    }
     .scroll-prompt {
       text-align: center;
       font-family: 'Fraunces', serif;
@@ -216,7 +211,6 @@
     }
 
     @media (max-width: 900px) {
-      .social-masonry-section { padding: 2rem 1.5rem 1rem; }
       .accounts-section { padding: 0 1.5rem 3rem; }
       .social-cta { padding: 4rem 1.5rem; }
       .social-section-divider { padding: 0 1.5rem; }
@@ -294,9 +288,10 @@
   </div>
 </div>
 
-<!-- PHONE MASONRY: client accounts -->
-<section class="social-masonry-section">
-  <div class="phone-masonry">
+<!-- PHONE BANNER: client accounts (horizontal scroll) -->
+<div class="phone-banner-wrap" data-banner="clients">
+  <button class="phone-banner-nav prev" aria-label="Scroll to previous client">‹</button>
+  <div class="phone-banner">
 
     <a class="phone-frame" href="https://instagram.com/bluestarcoffee" target="_blank" rel="noopener" aria-label="Open @bluestarcoffee on Instagram">
       <div class="phone-screen has-image">
@@ -324,9 +319,8 @@
     </a>
 
   </div>
-
-  <p class="scroll-prompt">Scroll for a closer look at each client ↓</p>
-</section>
+  <button class="phone-banner-nav next" aria-label="Scroll to next client">›</button>
+</div>
 
 <!-- DIVIDER -->
 <div class="accounts-divider">
@@ -548,9 +542,10 @@
   </div>
 </div>
 
-<!-- PHONE MASONRY: personal accounts -->
-<section class="social-masonry-section">
-  <div class="phone-masonry">
+<!-- PHONE BANNER: personal accounts (horizontal scroll) -->
+<div class="phone-banner-wrap" data-banner="personal">
+  <button class="phone-banner-nav prev" aria-label="Scroll to previous account">‹</button>
+  <div class="phone-banner">
 
     <a class="phone-frame" href="https://www.instagram.com/hann.runs/" target="_blank" rel="noopener" aria-label="Open @hann.runs on Instagram">
       <div class="phone-screen has-image">
@@ -571,7 +566,8 @@
     </a>
 
   </div>
-</section>
+  <button class="phone-banner-nav next" aria-label="Scroll to next account">›</button>
+</div>
 
 <!-- PERSONAL ACCOUNT DETAILED BREAKOUTS -->
 <section class="accounts-section">
@@ -705,6 +701,30 @@
 <script>
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('nav').classList.remove('is-open'));
+  });
+
+  // Phone banner: horizontal scroll with arrow nav (only when overflow)
+  document.querySelectorAll('.phone-banner-wrap').forEach(wrap => {
+    const banner = wrap.querySelector('.phone-banner');
+    const prev = wrap.querySelector('.phone-banner-nav.prev');
+    const next = wrap.querySelector('.phone-banner-nav.next');
+    if (!banner || !prev || !next) return;
+
+    const firstPhone = banner.querySelector('.phone-frame');
+    const step = () => (firstPhone ? firstPhone.offsetWidth + 26 : 260);
+
+    const update = () => {
+      const scrollable = banner.scrollWidth > banner.clientWidth + 4;
+      wrap.classList.toggle('is-scrollable', scrollable);
+      const max = banner.scrollWidth - banner.clientWidth - 2;
+      prev.toggleAttribute('disabled', !scrollable || banner.scrollLeft <= 0);
+      next.toggleAttribute('disabled', !scrollable || banner.scrollLeft >= max);
+    };
+    prev.addEventListener('click', () => banner.scrollBy({left: -step(), behavior: 'smooth'}));
+    next.addEventListener('click', () => banner.scrollBy({left:  step(), behavior: 'smooth'}));
+    banner.addEventListener('scroll', update, {passive: true});
+    window.addEventListener('resize', update);
+    update();
   });
 </script>
 

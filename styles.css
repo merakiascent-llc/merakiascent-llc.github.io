@@ -981,6 +981,110 @@ a.phone-frame:focus-visible {
 .phone-masonry > *:nth-child(3) { margin-top: -40px; }
 .phone-masonry > *:nth-child(4) { margin-top: 80px; }
 
+/* ============================================================
+   PHONE BANNER — horizontal scrolling row of phones
+   Used on portfolio-social for Client Work + Personal Brands
+   ============================================================ */
+.phone-banner-wrap {
+  position: relative;
+  max-width: 1180px;
+  margin: 2rem auto 0;
+  padding: 0 3.5rem;
+}
+.phone-banner {
+  display: flex;
+  gap: 1.6rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1.2rem 0.3rem 2rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(220, 26, 120, 0.35) rgba(60, 20, 40, 0.06);
+  justify-content: center;
+}
+.phone-banner-wrap.is-scrollable .phone-banner {
+  justify-content: flex-start;
+}
+.phone-banner::-webkit-scrollbar { height: 8px; }
+.phone-banner::-webkit-scrollbar-track {
+  background: rgba(60, 20, 40, 0.06);
+  border-radius: 4px;
+}
+.phone-banner::-webkit-scrollbar-thumb {
+  background: rgba(220, 26, 120, 0.35);
+  border-radius: 4px;
+}
+.phone-banner::-webkit-scrollbar-thumb:hover { background: rgba(220, 26, 120, 0.6); }
+.phone-banner .phone-frame {
+  flex: 0 0 240px;
+  scroll-snap-align: center;
+  margin: 0;
+}
+
+/* Nav arrows — only appear when the banner is scrollable */
+.phone-banner-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(60, 20, 40, 0.12);
+  background: var(--white);
+  color: var(--dark);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px -8px rgba(60, 20, 40, 0.2);
+  z-index: 3;
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+  padding: 0;
+}
+.phone-banner-wrap.is-scrollable .phone-banner-nav { display: flex; }
+.phone-banner-nav:hover,
+.phone-banner-nav:focus-visible {
+  background: var(--pink);
+  color: var(--white);
+  border-color: var(--pink);
+  transform: translateY(-50%) scale(1.06);
+}
+.phone-banner-nav.prev { left: 0; }
+.phone-banner-nav.next { right: 0; }
+.phone-banner-nav[disabled] { opacity: 0.35; cursor: not-allowed; }
+
+/* Fade masks — only when the banner scrolls */
+.phone-banner-wrap.is-scrollable::before,
+.phone-banner-wrap.is-scrollable::after {
+  content: '';
+  position: absolute;
+  top: 1.2rem;
+  bottom: 2rem;
+  width: 40px;
+  pointer-events: none;
+  z-index: 2;
+}
+.phone-banner-wrap.is-scrollable::before {
+  left: 3.5rem;
+  background: linear-gradient(to right, var(--white), transparent);
+}
+.phone-banner-wrap.is-scrollable::after {
+  right: 3.5rem;
+  background: linear-gradient(to left, var(--white), transparent);
+}
+
+@media (max-width: 900px) {
+  .phone-banner-wrap { padding: 0 1rem; margin-top: 1rem; }
+  .phone-banner { gap: 1.2rem; padding: 1rem 0.2rem 1.6rem; }
+  .phone-banner .phone-frame { flex: 0 0 210px; }
+  .phone-banner-nav { display: none; }
+  .phone-banner-wrap::before { left: 1rem; width: 20px; }
+  .phone-banner-wrap::after { right: 1rem; width: 20px; }
+}
+
 /* Account breakout sections */
 .account-breakout {
   display: grid;
