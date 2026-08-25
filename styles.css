@@ -7,6 +7,7 @@
 
 :root {
   /* Brand book colors */
+  --gold:        #EDB33B;     /* Google review stars */
   --pink:        #DC1A78;     /* Meraki Magenta */
   --pink-deep:   #B8125F;     /* Slightly deeper magenta for italic emphasis */
   --pink-light:  #E89BBE;     /* Soft Pink */
@@ -404,6 +405,77 @@ footer {
 .footer-copy {
   font-size: 0.7rem; letter-spacing: 0.1em;
   color: rgba(255,255,255,0.4);
+}
+
+/* ============================================================
+   FOOTER — Google review row (sits above copyright)
+   ============================================================ */
+.footer-review {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem 0.55rem;
+  padding: 1.25rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+}
+.footer-review .fr-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+.footer-review .fr-stars {
+  color: var(--gold);
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.footer-review .fr-muted {
+  color: rgba(255, 255, 255, 0.5);
+}
+.footer-review .fr-sep {
+  color: rgba(255, 255, 255, 0.28);
+  padding: 0 0.15rem;
+}
+.footer-review a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  padding: 0.3rem 0.15rem;
+  border-radius: 2px;
+  transition: color 0.2s ease;
+}
+.footer-review a:hover {
+  color: var(--pink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.footer-review a:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+  color: var(--pink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .footer-review {
+    padding: 1rem 1rem;
+    font-size: 0.78rem;
+    gap: 0.25rem 0.4rem;
+  }
+  .footer-review a {
+    padding: 0.85rem 0.4rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .footer-review .fr-sep { display: none; }
 }
 
 /* ============================================================
