@@ -2136,6 +2136,11 @@ body.lightbox-open { overflow: hidden; }
   filter: invert(0.28) brightness(0.6);
   transform: translateY(-2px);
 }
+/* For logos with a white background — multiply hides the white on cream */
+.trusted-by-logo.on-cream-multiply img,
+.banner-item-logo.on-cream-multiply img {
+  mix-blend-mode: multiply;
+}
 .trusted-by-tagline {
   font-family: 'Fraunces', serif;
   font-style: italic;
