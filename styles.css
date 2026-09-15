@@ -83,12 +83,12 @@ nav {
 }
 .nav-cta {
   padding: 0.9rem 2.8rem;
-  background: var(--dark); color: var(--white) !important;
+  background: var(--pink); color: var(--white) !important;
   border-radius: 999px;
   border-color: transparent !important;
   font-size: 0.82rem;
 }
-.nav-cta:hover { background: var(--pink) !important; color: var(--white) !important; }
+.nav-cta:hover { background: var(--pink-deep) !important; color: var(--white) !important; }
 
 /* Mobile toggle */
 .nav-toggle {
