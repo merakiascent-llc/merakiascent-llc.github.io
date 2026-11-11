@@ -39,6 +39,9 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
+# github.io redirect stubs (served by GitHub Pages only)
+Disallow: /docs/
+
 # Hide source-photo folder if it ever gets committed
 Disallow: /assets/Top photos/
 Disallow: /assets/Top%20photos/
