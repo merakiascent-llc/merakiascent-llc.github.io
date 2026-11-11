@@ -198,7 +198,8 @@ nav.is-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate
   max-width: 1100px;
   margin: 0 auto;
 }
-.page-hero h1 {
+.page-hero h1,
+.page-hero .hero-display {
   font-family: 'Fraunces', serif;
   font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   font-weight: 400; line-height: 1.12;
@@ -206,7 +207,8 @@ nav.is-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate
   margin: 1rem 0 1.5rem;
   max-width: 820px;
 }
-.page-hero h1 em {
+.page-hero h1 em,
+.page-hero .hero-display em {
   font-style: italic;
   color: var(--pink-deep);
 }
@@ -2395,4 +2397,10 @@ body.lightbox-open { overflow: hidden; }
   .client-breakout.reverse .client-text-col { order: 2; }
   .client-text-col { max-width: 100%; }
   .client-stats-row { gap: 1.5rem; }
+}
+
+/* Keyword H1 that keeps the look of the small eyebrow label above the headline */
+h1.label-h1,
+.page-hero h1.label-h1 {
+  font: inherit; color: inherit; margin: 0; max-width: none; line-height: inherit;
 }

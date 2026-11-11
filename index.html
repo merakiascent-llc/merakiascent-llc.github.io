@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Send visitors and crawlers on the github.io copy to the real domain -->
+  <script>if(/\.github\.io$/i.test(location.hostname)){location.replace('https://merakiascent.com'+location.pathname.replace(/\/index\.html$/,'/').replace(/\.html$/,'')+location.search+location.hash);}</script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Marketing &amp; Social Media Consultant · Methow Valley WA · Meraki Ascent</title>
   <meta name="description" content="Marketing consultant and social media manager serving businesses in the Methow Valley, Winthrop, Twisp, and Okanogan County, WA. Values-driven strategy, done with soul.">
-  <meta name="keywords" content="marketing consultant methow valley, social media manager methow valley, marketing agency winthrop wa, social media management twisp, okanogan county marketing, small business marketing washington">
   <link rel="icon" type="image/png" href="assets/logo-icon-color.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +41,7 @@
       "description": "A multi-disciplinary consulting practice for founder-led, values-driven companies. Business development, investor relations, and soul-led marketing.",
       "slogan": "Connecting people. Driving meaningful growth.",
       "founder": {
-        "@id": "https://merakiascent.com/about.html#hannah"
+        "@id": "https://merakiascent.com/about#hannah"
       },
       "foundingDate": "2026-02",
       "areaServed": [
@@ -70,7 +71,8 @@
       ],
       "sameAs": [
         "https://linkedin.com/in/hannah-weymuller",
-        "https://linktr.ee/hweymuller"
+        "https://linktr.ee/hweymuller",
+        "https://g.page/r/CWXEDB6Ea1nfEAI"
       ]
     },
     {
@@ -144,19 +146,19 @@
             "@type": "Offer",
             "name": "Roots - Entry Social Media Package",
             "description": "Foundational social media management for small businesses in the Methow Valley and Okanogan County.",
-            "url": "https://merakiascent.com/services.html"
+            "url": "https://merakiascent.com/services"
           },
           {
             "@type": "Offer",
             "name": "Foothills - Growth Social Media Package",
             "description": "Full social media management with strategy and content production for growing businesses.",
-            "url": "https://merakiascent.com/services.html"
+            "url": "https://merakiascent.com/services"
           },
           {
             "@type": "Offer",
             "name": "Summit - Executive Social Media Package",
             "description": "Comprehensive marketing and social media leadership for established businesses.",
-            "url": "https://merakiascent.com/services.html"
+            "url": "https://merakiascent.com/services"
           },
           {
             "@type": "Offer",
@@ -198,7 +200,7 @@
           "name": "Where can I find a marketing consultant near Winthrop or Twisp, WA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Meraki Ascent LLC is a marketing consultant based in the Methow Valley, serving Winthrop, Twisp, Mazama, and businesses across Okanogan County, Washington. Book a 30-minute discovery call at https://merakiascent.com/contact.html."
+            "text": "Meraki Ascent LLC is a marketing consultant based in the Methow Valley, serving Winthrop, Twisp, Mazama, and businesses across Okanogan County, Washington. Book a 30-minute discovery call at https://merakiascent.com/contact."
           }
         },
         {
@@ -724,7 +726,7 @@
 
 <!-- ========== NAV ========== -->
 <nav id="nav">
-  <a class="nav-brand" href="index.html">
+  <a class="nav-brand" href="/">
     <img src="assets/logo-icon-color.png" alt="Meraki Ascent"/>
     <span class="nav-brand-text">Meraki Ascent</span>
   </a>
@@ -732,31 +734,31 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links">
-    <li><a href="index.html" class="is-active">Home</a></li>
+    <li><a href="/" class="is-active">Home</a></li>
     <li class="has-dropdown">
-      <a href="about.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      <a href="/about" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
         About
         <svg class="dropdown-chevron" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 4 L5 7 L8 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <ul class="dropdown-menu">
-        <li><a href="about.html">About the Founder</a></li>
-        <li><a href="about-meraki.html">About Meraki Ascent</a></li>
+        <li><a href="/about">About the Founder</a></li>
+        <li><a href="/about-meraki">About Meraki Ascent</a></li>
       </ul>
     </li>
-    <li><a href="services.html">Services</a></li>
+    <li><a href="/services">Services</a></li>
     <li class="has-dropdown">
-      <a href="portfolio.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      <a href="/portfolio" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
         Portfolio
         <svg class="dropdown-chevron" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 4 L5 7 L8 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <ul class="dropdown-menu">
-        <li><a href="portfolio.html">Overview</a></li>
-        <li><a href="portfolio-writing.html">Writing</a></li>
-        <li><a href="portfolio-social.html">Social Media</a></li>
-        <li><a href="portfolio-photography.html">Photography</a></li>
+        <li><a href="/portfolio">Overview</a></li>
+        <li><a href="/portfolio-writing">Writing</a></li>
+        <li><a href="/portfolio-social">Social Media</a></li>
+        <li><a href="/portfolio-photography">Photography</a></li>
       </ul>
     </li>
-    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    <li><a href="/contact" class="nav-cta">Get in Touch</a></li>
   </ul>
 </nav>
 
@@ -767,19 +769,19 @@
   <div class="hero-left">
     <div class="hero-eyebrow">
       <div class="eyebrow-line"></div>
-      <span class="eyebrow-text">Business Development · Investor Relations · Marketing</span>
+      <h1 class="label-h1"><span class="eyebrow-text">Marketing &amp; Social Media · Methow Valley, WA</span></h1>
     </div>
-    <h1 class="hero-title">
+    <p class="hero-title">
       Connecting people.<br>
       Driving <em>meaningful</em><br>
       growth.
-    </h1>
+    </p>
     <p class="hero-sub">
-      Meraki Ascent helps founder-led, values-driven companies grow through soul-led business development, investor relations, and marketing. Connecting good people doing good things with each other.
+      Meraki Ascent helps founder-led, values-driven companies grow through soul-led marketing, social media, business development, and investor relations. Connecting good people doing good things with each other.
     </p>
     <div class="hero-actions">
-      <a href="services.html" class="btn-primary">Explore Services</a>
-      <a href="about.html" class="btn-secondary">The Story →</a>
+      <a href="/services" class="btn-primary">Explore Services</a>
+      <a href="/about" class="btn-secondary">The Story →</a>
     </div>
     <!-- Fix 2: Real stats -->
     <div class="hero-stats">
@@ -886,7 +888,7 @@
       </svg>
       <h3>Business Development<br><em>that moves the line.</em></h3>
       <p>Strategic outreach, partnership architecture, and pipeline building for founder-led companies who want to grow without losing the soul of what they've built.</p>
-      <a href="contact.html" class="practice-link">Inquire <span>→</span></a>
+      <a href="/contact" class="practice-link">Inquire <span>→</span></a>
     </article>
 
     <!-- Fix 4: IR card icon = mountain peak with a flag at the summit -->
@@ -899,7 +901,7 @@
       </svg>
       <h3>Investor Relations<br><em>built on belief.</em></h3>
       <p>Cultivating warm introductions to angels, venture funds, and family offices focused on impact. Currently engaged with Terra Axis on fund-level IR and BD support.</p>
-      <a href="contact.html" class="practice-link">Inquire <span>→</span></a>
+      <a href="/contact" class="practice-link">Inquire <span>→</span></a>
     </article>
 
     <!-- Fix 4: Marketing card icon = compass with a magenta needle -->
@@ -913,7 +915,7 @@
       </svg>
       <h3>Soul-led marketing<br><em>worth sharing.</em></h3>
       <p>Three packaged tiers built for values-driven businesses across Okanogan County. Real strategy, real voice, real results. The first packaged offering, with more to come.</p>
-      <a href="services.html" class="practice-link">View Packages <span>→</span></a>
+      <a href="/services" class="practice-link">View Packages <span>→</span></a>
     </article>
   </div>
 </section>
@@ -978,7 +980,7 @@
       </div>
 
       <div style="margin-top: 2rem;">
-        <a href="about.html" class="btn-secondary">Read the full story →</a>
+        <a href="/about" class="btn-secondary">Read the full story →</a>
       </div>
     </div>
   </div>
@@ -1016,7 +1018,7 @@
 <section class="featured-strip">
   <span class="eyebrow-text">As Featured In</span>
   <div class="featured-logos">
-    <a class="featured-logo" href="portfolio-writing.html">
+    <a class="featured-logo" href="/portfolio-writing">
       <span class="logo-mark">LinkedIn</span>
       <span class="logo-meta">Self-Published, 2019&ndash;Present</span>
     </a>
@@ -1074,8 +1076,8 @@
       Whether you're a founder looking to grow, an investor seeking meaningful opportunities, or a values-driven business ready to share its story well, I'd love to connect. No pitch, no pressure. Just a conversation.
     </p>
     <div class="cta-actions">
-      <a href="contact.html" class="btn-primary">Start a Conversation</a>
-      <a href="services.html" class="btn-secondary">See Services →</a>
+      <a href="/contact" class="btn-primary">Start a Conversation</a>
+      <a href="/services" class="btn-secondary">See Services →</a>
     </div>
     <div class="cta-signoff">
       <div class="script">— Hannah</div>
@@ -1095,20 +1097,20 @@
     <div class="footer-col">
       <h4>Practice</h4>
       <ul>
-        <li><a href="about.html">About the Founder</a></li>
-        <li><a href="about-meraki.html">About Meraki Ascent</a></li>
-        <li><a href="services.html">Social Media Services</a></li>
-        <li><a href="services.html#beyond">BD &amp; IR</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/about">About the Founder</a></li>
+        <li><a href="/about-meraki">About Meraki Ascent</a></li>
+        <li><a href="/services">Social Media Services</a></li>
+        <li><a href="/services#beyond">BD &amp; IR</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Portfolio</h4>
       <ul>
-        <li><a href="portfolio.html">Overview</a></li>
-        <li><a href="portfolio-writing.html">Writing</a></li>
-        <li><a href="portfolio-social.html">Social Media</a></li>
-        <li><a href="portfolio-photography.html">Photography</a></li>
+        <li><a href="/portfolio">Overview</a></li>
+        <li><a href="/portfolio-writing">Writing</a></li>
+        <li><a href="/portfolio-social">Social Media</a></li>
+        <li><a href="/portfolio-photography">Photography</a></li>
       </ul>
     </div>
     <div class="footer-col">
