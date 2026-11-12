@@ -1,0 +1,139 @@
+/* ==========================================================================
+   ELEVATE — shared layer that brings every page in line with the home page.
+   Loaded LAST on each inner page, so it only restyles; content and layout
+   markup stay untouched. Remove the <link> to a page to opt it out.
+   ========================================================================== */
+
+@property --r0 { syntax: '<length>'; initial-value: 0px; inherits: true; }
+@property --r1 { syntax: '<length>'; initial-value: 0px; inherits: true; }
+@property --r2 { syntax: '<length>'; initial-value: 0px; inherits: true; }
+@property --r3 { syntax: '<length>'; initial-value: 0px; inherits: true; }
+
+:root {
+  --sky: #E2F2F4;
+  --plum: #3B1328;
+  --ink: #24091A;
+  /* how wide the ridge art is drawn (zoomed past the screen edges) and how tall a band it fills */
+  --mw: max(100vw, 1500px);
+  --band: 250px;
+  --band-front: 190px;
+  --ridge-0: url("/assets/hero-range-0.svg");
+  --ridge-1: url("/assets/hero-range-1.svg");
+  --ridge-2: url("/assets/hero-range-2.svg");
+  --ridge-3: url("/assets/hero-range-3.svg");
+  --ground: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 62 L0 30 C 200 14, 360 44, 560 26 S 900 10, 1100 32 S 1340 18, 1440 26 L1440 62 Z' fill='%233B1328' stroke='%2324091A' stroke-width='5'/%3E%3C/svg%3E");
+}
+@media (max-width: 900px) {
+  :root { --mw: max(100vw, 760px); --band: 170px; --band-front: 130px; }
+}
+
+/* ---------- Mountain band (shared by page headers and closing CTAs) ----------
+   Each ridge layer is drawn at --mw wide, anchored so only its top --band of
+   height shows (lower parts sit hidden under the nearer layers and the ground). */
+.page-hero,
+#final-cta,
+.about-final-cta,
+.social-cta {
+  background-color: var(--sky) !important;
+  background-image: var(--ground), var(--ridge-3), var(--ridge-2), var(--ridge-1), var(--ridge-0) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 46px, var(--mw) auto, var(--mw) auto, var(--mw) auto, var(--mw) auto !important;
+  background-position:
+    center bottom -2px,
+    center bottom calc(var(--band-front) - var(--mw) * 0.275 - var(--r3)),
+    center bottom calc(var(--band-front) - var(--mw) * 0.275 - var(--r2)),
+    center bottom calc(var(--band) - var(--mw) * 0.35 - var(--r1)),
+    center bottom calc(var(--band) - var(--mw) * 0.35 - var(--r0)) !important;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::after { display: none !important; }
+
+/* page headers: room for the band under the words */
+.page-hero { padding-bottom: calc(var(--band) + 3.5rem) !important; }
+.page-hero h1, .page-hero .hero-display { letter-spacing: -0.01em; }
+.page-hero h1 em, .page-hero .hero-display em { color: var(--plum); font-weight: 500; }
+.page-hero-sub { color: var(--plum) !important; }
+
+/* closing CTAs: same sky and ridges as the home page's last section */
+#final-cta, .about-final-cta, .social-cta {
+  padding-bottom: calc(var(--band) + 4rem) !important;
+  text-align: center;
+}
+#final-cta h2 em, .about-final-cta h2 em, .social-cta h2 em { color: var(--plum); font-weight: 500; }
+
+/* ridges rise into place as you start scrolling (the base state is "in place",
+   so browsers without scroll-driven animation simply show the finished view) */
+@keyframes ma-ridges-rise {
+  from { --r0: 70px; --r1: 140px; --r2: 170px; --r3: 190px; }
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .page-hero {
+      animation: ma-ridges-rise linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px 420px;
+    }
+    #final-cta, .about-final-cta, .social-cta {
+      animation: ma-ridges-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 55%;
+    }
+  }
+}
+
+/* ---------- Header photos: arched, plum-outlined like the founder photo ---------- */
+.page-hero-image {
+  border-radius: 999px 999px 18px 18px !important;
+  border: 6px solid var(--ink);
+  outline: 2px solid #E3288A;
+  outline-offset: 8px;
+  box-shadow: none !important;
+  overflow: hidden;
+  margin: 10px;
+}
+.page-hero-image-accent { display: none !important; }
+
+/* ---------- Sections: the home page's plum / cream / sky rhythm ---------- */
+.section-dark { background: var(--plum) !important; }
+.section-dark::before { display: none !important; }
+.section-mist { background: var(--sky) !important; }
+.section-cream { background: #FBF8F4 !important; }
+.section-heading { letter-spacing: -0.01em; }
+.section-dark .section-heading em { color: #F3A6CC; }
+
+/* section labels pick up the home page's tracked caps */
+.label-text { font-weight: 600 !important; letter-spacing: 0.22em !important; }
+
+/* gentle rise-in for headings as they enter (same feel as the home page) */
+@keyframes ma-up { from { opacity: 0; transform: translateY(28px); } }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .section .section-heading,
+    .section .section-label {
+      animation: ma-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+  }
+}
+
+/* ---------- Buttons: pill shape, plum and magenta like the home page ---------- */
+.btn-primary {
+  border-radius: 999px !important;
+  background: var(--plum) !important;
+  padding: 1rem 2.2rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+}
+.btn-primary:hover { background: #DE1C7E !important; }
+.btn-secondary { font-weight: 600; letter-spacing: 0.14em; }
+
+/* ---------- Footer: a ridge line where the page meets the footer ---------- */
+footer { position: relative; }
+footer::before {
+  content: '';
+  position: absolute; left: 0; right: 0; top: -44px; height: 46px;
+  background: var(--ground) center bottom / 100% 46px no-repeat;
+  pointer-events: none;
+}
