@@ -553,11 +553,15 @@ footer {
    RESPONSIVE NAV / GLOBAL
    ============================================================ */
 @media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
+  /* No blur on mobile: backdrop-filter makes the bar the containing block for the
+     fixed drawer below, which squashed the menu to one item tall. */
+  nav { padding: 1rem 1.5rem; background: #ffffff; backdrop-filter: none; -webkit-backdrop-filter: none; }
   .nav-toggle { display: flex; }
   .nav-links {
     position: fixed;
     inset: 76px 0 0 0;
+    height: calc(100vh - 76px);
+    height: calc(100dvh - 76px);
     background-color: #ffffff;
     flex-direction: column;
     align-items: stretch;
