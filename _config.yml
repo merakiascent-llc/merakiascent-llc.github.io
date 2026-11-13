@@ -1,0 +1,4 @@
+# Keep internal notes and tools out of the published site.
+exclude:
+  - docs
+  - tools
